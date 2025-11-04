@@ -7,25 +7,25 @@ import { WaitlistForm } from '../ui/WaitlistForm';
 export function Hero() {
   return (
     <section
-      className="relative min-h-screen flex items-center py-16 sm:py-20 md:py-8 overflow-hidden"
+      className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden"
       aria-label="Hero section"
     >
       <Container>
         <div className="text-center max-w-6xl mx-auto relative z-10">
           {/* Main Heading - Apple/Stripe Style */}
           <h1
-            className="text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-normal text-charcoal leading-[1.15] sm:leading-[1.2] tracking-[-0.02em] mb-4 sm:mb-6 md:mb-7 px-4 sm:px-6 animate-fade-in-up animation-delay-100"
+            className="text-[1.875rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-normal text-charcoal leading-[1.15] sm:leading-[1.2] tracking-[-0.02em] mb-4 sm:mb-5 md:mb-7 px-4 sm:px-6 animate-fade-in-up animation-delay-100"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             <span className="block text-center">Stop scrolling. Start</span>
-            <span className="block text-center mt-2 sm:mt-3 overflow-hidden" aria-live="polite">
+            <span className="block text-center mt-1.5 sm:mt-2.5 md:mt-3 overflow-hidden" aria-live="polite">
               <RotatingText />
             </span>
           </h1>
 
           {/* Subheading - Clean Sans Serif */}
           <p
-            className="text-[0.875rem] sm:text-[1.0625rem] md:text-[1.125rem] lg:text-[1.25rem] text-stone-700 leading-[1.5] sm:leading-[1.6] mb-8 sm:mb-9 md:mb-10 max-w-2xl mx-auto font-medium px-6 sm:px-8 animate-fade-in-up animation-delay-200"
+            className="text-[0.8125rem] sm:text-[0.9375rem] md:text-[1.0625rem] lg:text-[1.125rem] text-stone-700 leading-[1.5] sm:leading-[1.6] mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto font-medium px-6 sm:px-8 animate-fade-in-up animation-delay-200"
             role="doc-subtitle"
           >
             The smarter way to turn your plans into reality with the right people around you.
@@ -36,7 +36,7 @@ export function Hero() {
 
           {/* Trust Badge with Social Proof */}
           <aside
-            className="flex items-center justify-center text-xs sm:text-sm text-stone-500 animate-fade-in-up animation-delay-400 px-4 sm:px-6 mt-4 sm:mt-5"
+            className="flex items-center justify-center text-[0.6875rem] sm:text-xs md:text-sm text-stone-500 animate-fade-in-up animation-delay-400 px-4 sm:px-6 mt-3 sm:mt-4 md:mt-5"
             aria-label="Social proof"
           >
             <p className="font-medium text-center">

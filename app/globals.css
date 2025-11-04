@@ -118,19 +118,21 @@
 
 /* Base Styles */
 body {
-  background: transparent;
+  background: white;
   color: var(--foreground);
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background: var(--background);
+  background: white;
 }
 
 /* Prevent horizontal overflow on mobile */

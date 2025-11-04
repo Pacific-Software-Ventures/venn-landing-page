@@ -38,23 +38,23 @@ export default function Home() {
       </div>
 
       <Header />
-      <main className="min-h-screen relative overflow-hidden" role="main">
-      {/* Complex Multi-Layer Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FFFBEB] via-white to-white" />
+      <main className="min-h-screen min-h-[100dvh] relative overflow-hidden" role="main">
+        {/* Complex Multi-Layer Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FFFBEB] via-white to-white" />
 
-      {/* Radial gradients for depth */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-[-10%] left-[-5%] w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] md:w-[600px] md:h-[600px] bg-gradient-radial from-[#FEF3C7]/40 via-[#FEF3C7]/10 to-transparent rounded-full blur-3xl" />
-        <div className="absolute top-[20%] right-[-10%] w-[400px] h-[400px] sm:w-[550px] sm:h-[550px] md:w-[700px] md:h-[700px] bg-gradient-radial from-[#FBBF24]/20 via-[#FEF3C7]/10 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-[-15%] left-[10%] w-[450px] h-[450px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] bg-gradient-radial from-[#FB923C]/15 via-transparent to-transparent rounded-full blur-3xl" />
-      </div>
+        {/* Radial gradients for depth */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-[-10%] left-[-5%] w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] md:w-[600px] md:h-[600px] bg-gradient-radial from-[#FEF3C7]/40 via-[#FEF3C7]/10 to-transparent rounded-full blur-3xl" />
+          <div className="absolute top-[20%] right-[-10%] w-[400px] h-[400px] sm:w-[550px] sm:h-[550px] md:w-[700px] md:h-[700px] bg-gradient-radial from-[#FBBF24]/20 via-[#FEF3C7]/10 to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-[-15%] left-[10%] w-[450px] h-[450px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] bg-gradient-radial from-[#FB923C]/15 via-transparent to-transparent rounded-full blur-3xl" />
+        </div>
 
-      {/* Subtle mesh gradient overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-100/15 sm:from-orange-100/20 via-transparent to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-amber-100/15 sm:from-amber-100/20 via-transparent to-transparent" />
+        {/* Subtle mesh gradient overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-100/15 sm:from-orange-100/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-amber-100/15 sm:from-amber-100/20 via-transparent to-transparent" />
 
-      <Hero />
-    </main>
+        <Hero />
+      </main>
     </>
   );
 }
