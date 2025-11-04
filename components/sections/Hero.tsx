@@ -7,7 +7,7 @@ import { WaitlistForm } from '../ui/WaitlistForm';
 export function Hero() {
   return (
     <section
-      className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden py-8 sm:py-12 md:py-16"
+      className="relative min-h-[100vh] min-h-[100dvh] flex items-center justify-center overflow-hidden py-12 sm:py-16"
       aria-label="Hero section"
     >
       <Container>

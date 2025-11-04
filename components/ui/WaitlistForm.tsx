@@ -26,17 +26,102 @@ export function WaitlistForm() {
 
   const totalSteps = 4;
 
-  // Auto-focus on step change (disabled on mobile to prevent keyboard issues)
+  // Auto-focus disabled to prevent layout shift and scrolling issues
+  // Users can manually tap/click inputs when ready
+  // useEffect(() => {
+  //   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  //   if (!isMobile) {
+  //     const input = document.querySelector('input:not([type="hidden"])') as HTMLInputElement;
+  //     if (input) {
+  //       setTimeout(() => input.focus(), 100);
+  //     }
+  //   }
+  // }, [step]);
+
+  // Advanced mobile keyboard handling using Visual Viewport API
   useEffect(() => {
-    // Only auto-focus on non-mobile devices
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (!isMobile) {
-      const input = document.querySelector('input:not([type="hidden"])') as HTMLInputElement;
-      if (input) {
-        setTimeout(() => input.focus(), 100);
+    if (!isMobile) return;
+
+    let activeInput: HTMLElement | null = null;
+
+    // Handle input focus
+    const handleFocus = (e: FocusEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
+        activeInput = target;
+
+        // Use Visual Viewport API if available (modern browsers)
+        if (window.visualViewport) {
+          // Wait for keyboard to settle
+          setTimeout(() => {
+            if (activeInput) {
+              const rect = activeInput.getBoundingClientRect();
+              const viewportHeight = window.visualViewport?.height || window.innerHeight;
+
+              // Check if input is hidden by keyboard
+              if (rect.bottom > viewportHeight) {
+                // Scroll just enough to show the input
+                const scrollAmount = rect.bottom - viewportHeight + 20; // 20px padding
+                window.scrollBy({
+                  top: scrollAmount,
+                  behavior: 'smooth'
+                });
+              }
+            }
+          }, 300);
+        } else {
+          // Fallback for older browsers
+          setTimeout(() => {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'nearest',
+              inline: 'nearest'
+            });
+          }, 300);
+        }
       }
+    };
+
+    // Handle input blur
+    const handleBlur = () => {
+      activeInput = null;
+    };
+
+    // Visual Viewport resize handler (keyboard open/close)
+    const handleViewportResize = () => {
+      if (activeInput && window.visualViewport) {
+        const rect = activeInput.getBoundingClientRect();
+        const viewportHeight = window.visualViewport.height;
+
+        // Ensure input stays visible when keyboard resizes
+        if (rect.bottom > viewportHeight) {
+          const scrollAmount = rect.bottom - viewportHeight + 20;
+          window.scrollBy({
+            top: scrollAmount,
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+
+    // Add event listeners
+    document.addEventListener('focus', handleFocus, true);
+    document.addEventListener('blur', handleBlur, true);
+
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', handleViewportResize);
     }
-  }, [step]);
+
+    return () => {
+      document.removeEventListener('focus', handleFocus, true);
+      document.removeEventListener('blur', handleBlur, true);
+
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', handleViewportResize);
+      }
+    };
+  }, []);
 
   const handleNext = () => {
     if (!isStepValid()) return;
@@ -221,7 +306,8 @@ export function WaitlistForm() {
                   value={formData.name}
                   onChange={(e) => updateFormData('name', e.target.value)}
                   placeholder="e.g. Alex Johnson"
-                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 text-base bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
+                  autoComplete="name"
+                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
                   required
                   aria-required="true"
                   aria-label="Enter your full name"
@@ -250,10 +336,13 @@ export function WaitlistForm() {
                 </div>
                 <input
                   type="number"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   value={formData.age}
                   onChange={(e) => updateFormData('age', e.target.value)}
                   placeholder="e.g. 25"
-                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 text-base bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
+                  autoComplete="off"
+                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
                   min="13"
                   max="120"
                   onKeyDown={(e) => {
@@ -315,11 +404,13 @@ export function WaitlistForm() {
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <input
-                  type="text"
+                  type="email"
+                  inputMode="email"
                   value={formData.contact}
                   onChange={(e) => updateFormData('contact', e.target.value)}
                   placeholder="email@example.com"
-                  className="w-full pl-10 sm:pl-12 pr-10 sm:pr-12 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 text-base bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
+                  autoComplete="email"
+                  className="w-full pl-10 sm:pl-12 pr-10 sm:pr-12 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && isStepValid()) {
                       handleNext();
@@ -354,7 +445,7 @@ export function WaitlistForm() {
             onClick={handleNext}
             disabled={!isStepValid() || isAnimating || isSubmitting}
             className={`flex-1 flex items-center justify-center gap-1.5 sm:gap-2 font-semibold transition-all duration-300 text-sm sm:text-base ${
-              !isStepValid() || isAnimating || isSubmitting ? 'opacity-40 cursor-not-allowed' : 'hover:shadow-warm-lg hover:-translate-y-0.5'
+              !isStepValid() || isAnimating || isSubmitting ? 'cursor-not-allowed' : 'hover:shadow-warm-lg hover:-translate-y-0.5'
             }`}
           >
             {isSubmitting ? (

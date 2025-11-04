@@ -142,42 +142,70 @@ html {
   position: relative;
 }
 
-/* Prevent horizontal overflow on mobile */
+/* Prevent double-tap zoom on mobile */
 * {
-  max-width: 100%;
-  /* Prevent double-tap zoom on mobile */
   touch-action: manipulation;
 }
 
-/* Allow specific elements to break out when needed */
-.container,
-main,
-section {
-  max-width: none;
+/* Prevent horizontal overflow - only on potentially problematic elements */
+img,
+video,
+canvas,
+iframe,
+embed,
+object {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Mobile-specific input fixes */
-@media (max-width: 768px) {
+/* Input fixes - prevent iOS zoom while allowing desktop scaling */
+input,
+textarea,
+select {
+  /* MUST be 16px minimum to prevent iOS Safari auto-zoom */
+  font-size: 16px;
+  /* Smooth font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Allow larger inputs on tablets and desktop */
+@media (min-width: 640px) {
   input,
   textarea,
-  select,
-  button {
-    /* Prevent zoom on input focus in iOS */
-    font-size: 16px !important;
-    /* Prevent layout shift when keyboard appears */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
+  select {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+@media (min-width: 1024px) {
+  input,
+  textarea,
+  select {
+    font-size: 1.0625rem; /* 17px - slightly larger for desktop */
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Remove default iOS input styling */
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="search"],
+  textarea,
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
-  /* Ensure form containers maintain their padding */
-  form {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* Fix for iOS Safari bottom bar */
-  body {
-    padding-bottom: env(safe-area-inset-bottom);
+  /* Prevent tap highlight flash on mobile */
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -254,6 +282,9 @@ section {
 
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
+  /* Prevent layout shift - start elements in final position */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .animate-fade-in {

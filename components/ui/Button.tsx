@@ -13,7 +13,7 @@ export function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  const baseStyles = 'font-semibold rounded-lg sm:rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 touch-manipulation';
+  const baseStyles = 'font-semibold rounded-lg sm:rounded-xl transition-all duration-300 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 touch-manipulation';
 
   const variants = {
     primary: 'bg-burnt-orange hover:bg-burnt-orange-dark text-white shadow-[0_4px_14px_rgba(234,88,12,0.4)] hover:shadow-[0_6px_20px_rgba(234,88,12,0.5)] active:shadow-md',
