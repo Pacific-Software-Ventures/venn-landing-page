@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Venn - Stop Scrolling, Start Living'
+export const alt = 'Venn - Stop Scrolling, Start Living | Connect with Real People'
 export const size = {
   width: 1200,
   height: 630,
@@ -20,9 +20,36 @@ export default async function Image() {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundColor: '#FFFBEB',
-          backgroundImage: 'radial-gradient(circle at 25% 25%, #FEF3C7 0%, transparent 50%), radial-gradient(circle at 75% 75%, #FB923C 0%, transparent 50%)',
+          backgroundImage: 'linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 50%, #FDE68A 100%)',
+          position: 'relative',
         }}
       >
+        {/* Gradient orbs in background */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '-100px',
+            left: '-100px',
+            width: '400px',
+            height: '400px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, transparent 70%)',
+            filter: 'blur(60px)',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '-100px',
+            right: '-100px',
+            width: '500px',
+            height: '500px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(251, 146, 60, 0.3) 0%, transparent 70%)',
+            filter: 'blur(60px)',
+          }}
+        />
+
         <div
           style={{
             display: 'flex',
@@ -30,27 +57,31 @@ export default async function Image() {
             alignItems: 'center',
             justifyContent: 'center',
             padding: '80px',
+            position: 'relative',
+            zIndex: 10,
           }}
         >
-          {/* Logo/Icon placeholder */}
+          {/* Logo Circle with modern design */}
           <div
             style={{
-              width: '120px',
-              height: '120px',
+              width: '140px',
+              height: '140px',
               borderRadius: '50%',
               background: 'linear-gradient(135deg, #EA580C 0%, #FB923C 100%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '40px',
-              boxShadow: '0 20px 40px rgba(234, 88, 12, 0.3)',
+              marginBottom: '48px',
+              boxShadow: '0 25px 50px rgba(234, 88, 12, 0.4), 0 10px 20px rgba(234, 88, 12, 0.3)',
+              border: '6px solid rgba(255, 255, 255, 0.8)',
             }}
           >
             <div
               style={{
-                fontSize: '64px',
+                fontSize: '72px',
                 fontWeight: 900,
                 color: 'white',
+                fontFamily: 'serif',
               }}
             >
               V
@@ -60,28 +91,31 @@ export default async function Image() {
           {/* Title */}
           <div
             style={{
-              fontSize: '72px',
+              fontSize: '88px',
               fontWeight: 900,
-              background: 'linear-gradient(135deg, #1C1917 0%, #44403C 100%)',
-              backgroundClip: 'text',
-              color: 'transparent',
+              color: '#1C1917',
               textAlign: 'center',
-              marginBottom: '20px',
+              marginBottom: '24px',
               fontFamily: 'serif',
+              letterSpacing: '-0.02em',
             }}
           >
             Venn
           </div>
 
-          {/* Tagline */}
+          {/* Tagline with emphasis */}
           <div
             style={{
-              fontSize: '42px',
-              fontWeight: 600,
-              color: '#EA580C',
+              fontSize: '48px',
+              fontWeight: 700,
+              background: 'linear-gradient(135deg, #EA580C 0%, #FB923C 100%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              color: 'transparent',
               textAlign: 'center',
-              marginBottom: '20px',
+              marginBottom: '28px',
               fontStyle: 'italic',
+              letterSpacing: '-0.01em',
             }}
           >
             Stop Scrolling. Start Living.
@@ -90,15 +124,15 @@ export default async function Image() {
           {/* Description */}
           <div
             style={{
-              fontSize: '28px',
-              fontWeight: 500,
-              color: '#57534E',
+              fontSize: '32px',
+              fontWeight: 600,
+              color: '#44403C',
               textAlign: 'center',
-              maxWidth: '800px',
+              maxWidth: '900px',
               lineHeight: 1.4,
             }}
           >
-            Turn your plans into reality with the right people around you
+            Turn your plans into reality with the right people
           </div>
         </div>
       </div>
