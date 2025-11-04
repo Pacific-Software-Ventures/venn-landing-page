@@ -65,7 +65,7 @@ export function WaitlistForm() {
       const result = await submitToAirtable(formData);
 
       if (result.success) {
-        console.log('Successfully submitted to Airtable:', result.record);
+        console.log('Successfully submitted to Airtable:', result.data);
         setIsSubmitted(true);
       } else {
         console.error('Failed to submit:', result.error);
