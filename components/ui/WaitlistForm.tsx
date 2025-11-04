@@ -190,7 +190,9 @@ export function WaitlistForm() {
   if (isSubmitted) {
     return (
       <div className="max-w-lg mx-auto px-4 sm:px-6 md:px-0 animate-fade-in">
-        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 shadow-large border border-stone-200 w-full box-border">
+        {/* Premium border wrapper for success state */}
+        <div className="relative rounded-xl sm:rounded-2xl p-[2px] bg-gradient-to-br from-burnt-orange via-amber-500 to-burnt-orange bg-[length:200%_200%] animate-gradient-rotate shadow-[0_0_40px_rgba(234,88,12,0.3),0_0_80px_rgba(234,88,12,0.15)] hover:shadow-[0_0_60px_rgba(234,88,12,0.4),0_0_100px_rgba(234,88,12,0.2)] transition-all duration-700">
+          <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 shadow-large w-full box-border">
           <div className="text-center">
             <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-burnt-orange/10 to-burnt-orange/20 rounded-full mb-4 sm:mb-5 animate-scale-in">
               <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8 text-burnt-orange" strokeWidth={2.5} />
@@ -212,6 +214,7 @@ export function WaitlistForm() {
             </Button>
           </div>
         </div>
+        </div>
       </div>
     );
   }
@@ -226,14 +229,21 @@ export function WaitlistForm() {
 
   return (
     <div className="max-w-lg mx-auto px-4 sm:px-6 md:px-0 animate-fade-in-up animation-delay-300">
-      <form
-        className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-stone-300/50 transition-all duration-500 hover:shadow-[0_16px_48px_rgb(234,88,12,0.15)] w-full box-border"
-        aria-label="Waitlist signup form"
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleNext();
-        }}
-      >
+      {/* Animated gradient border wrapper */}
+      <div className="relative rounded-xl sm:rounded-2xl p-[2px] bg-gradient-to-br from-burnt-orange via-amber-500 to-burnt-orange bg-[length:200%_200%] animate-gradient-rotate shadow-[0_0_40px_rgba(234,88,12,0.3),0_0_80px_rgba(234,88,12,0.15)] hover:shadow-[0_0_60px_rgba(234,88,12,0.4),0_0_100px_rgba(234,88,12,0.2)] transition-all duration-700">
+        {/* Shimmer overlay effect */}
+        <div className="absolute inset-0 rounded-xl sm:rounded-2xl overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer" />
+        </div>
+
+        <form
+          className="relative bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12),0_4px_15px_rgba(234,88,12,0.08)] transition-all duration-500 hover:translate-y-[-2px] w-full box-border"
+          aria-label="Waitlist signup form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleNext();
+          }}
+        >
         {/* Enhanced Progress Bar with Icons */}
         <div className="mb-5 sm:mb-6" role="progressbar" aria-valuenow={step} aria-valuemin={1} aria-valuemax={totalSteps} aria-label={`Step ${step} of ${totalSteps}`}>
           <div className="relative flex items-center mb-3">
@@ -467,6 +477,7 @@ export function WaitlistForm() {
           </Button>
         </div>
       </form>
+      </div>
     </div>
   );
 }
