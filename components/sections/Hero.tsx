@@ -3,6 +3,8 @@
 import { Container } from '../ui/Container';
 import { RotatingText } from '../ui/RotatingText';
 import { WaitlistForm } from '../ui/WaitlistForm';
+import { PhotoCollage } from '../ui/PhotoCollage';
+import { MessageBubble } from '../ui/MessageBubble';
 
 export function Hero() {
   return (
@@ -14,8 +16,11 @@ export function Hero() {
         <div className="text-center max-w-6xl mx-auto relative z-10 w-full">
           {/* Main Heading - Apple/Stripe Style */}
           <h1
-            className="text-[1.875rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-normal text-charcoal leading-[1.15] sm:leading-[1.2] tracking-[-0.02em] mb-4 sm:mb-5 md:mb-7 px-4 sm:px-6 animate-fade-in-up animation-delay-100"
-            style={{ fontFamily: 'var(--font-display)' }}
+            className="text-[1.875rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-normal text-charcoal leading-[1.15] sm:leading-[1.2] tracking-[-0.02em] mb-4 sm:mb-5 md:mb-7 px-4 sm:px-6 animate-fade-in-up animation-delay-100 drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)]"
+            style={{
+              fontFamily: 'var(--font-display)',
+              textShadow: '0 2px 12px rgba(255,255,255,0.95), 0 4px 24px rgba(255,255,255,0.8), 0 1px 3px rgba(0,0,0,0.1)'
+            }}
           >
             <span className="block text-center">Stop scrolling. Start</span>
             <span className="block text-center mt-1.5 sm:mt-2.5 md:mt-3 overflow-hidden" aria-live="polite">
@@ -25,7 +30,10 @@ export function Hero() {
 
           {/* Subheading - Clean Sans Serif */}
           <p
-            className="text-[0.8125rem] sm:text-[0.9375rem] md:text-[1.0625rem] lg:text-[1.125rem] text-stone-700 leading-[1.5] sm:leading-[1.6] mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto font-medium px-6 sm:px-8 animate-fade-in-up animation-delay-200"
+            className="text-[0.8125rem] sm:text-[0.9375rem] md:text-[1.0625rem] lg:text-[1.125rem] text-stone-800 leading-[1.5] sm:leading-[1.6] mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto font-semibold px-6 sm:px-8 animate-fade-in-up animation-delay-200 drop-shadow-[0_1px_4px_rgba(255,255,255,0.9)]"
+            style={{
+              textShadow: '0 2px 8px rgba(255,255,255,0.95), 0 4px 16px rgba(255,255,255,0.8)'
+            }}
             role="doc-subtitle"
           >
             The smarter way to turn your plans into reality with the right people around you.
@@ -45,6 +53,63 @@ export function Hero() {
           </aside>
         </div>
       </Container>
+
+      {/* Photo Collage Background */}
+      <PhotoCollage />
+
+      {/* iMessage Bubbles - Responsive display */}
+      {/* Mobile: 0 bubbles (hidden to reduce clutter) */}
+      {/* Tablet (md): 4 bubbles (corners) */}
+      {/* Desktop (lg): 8 bubbles (full spread) */}
+
+      {/* Tablet and up: Show 4 corner bubbles */}
+      <div className="hidden md:block lg:block">
+        <MessageBubble
+          message="Looking for people to play pickup basketball"
+          position="top-left"
+          delay={600}
+        />
+        <MessageBubble
+          message="Anyone want to grab coffee?"
+          position="top-right"
+          delay={1000}
+        />
+        <MessageBubble
+          message="Want to explore the city?"
+          position="bottom-left"
+          delay={3000}
+        />
+        <MessageBubble
+          message="Anyone into board games?"
+          position="bottom-right"
+          delay={3400}
+        />
+      </div>
+
+      {/* Desktop only: Show additional 4 middle bubbles */}
+      <div className="hidden lg:block">
+        <MessageBubble
+          message="Need a gym buddy"
+          position="mid-left"
+          delay={1400}
+        />
+        <MessageBubble
+          message="Who's down for hiking?"
+          position="mid-right"
+          delay={1800}
+        />
+        <MessageBubble
+          message="Let's start a book club!"
+          position="center-left"
+          delay={2200}
+        />
+        <MessageBubble
+          message="Looking for tennis partners"
+          position="center-right"
+          delay={2600}
+        />
+      </div>
+
 
       {/* Enhanced Decorative Light Orbs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">

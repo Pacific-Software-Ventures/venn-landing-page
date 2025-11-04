@@ -239,13 +239,16 @@ select {
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px) translateX(0px) rotate(var(--rotation, 0deg));
+    transform: translateY(0px) translateX(0px) rotate(var(--rotation, 0deg)) scale(1);
   }
-  33% {
-    transform: translateY(-30px) translateX(15px) rotate(calc(var(--rotation, 0deg) + 3deg));
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(calc(var(--rotation, 0deg) + 2deg)) scale(1.02);
   }
-  66% {
-    transform: translateY(-15px) translateX(-15px) rotate(calc(var(--rotation, 0deg) - 3deg));
+  50% {
+    transform: translateY(-35px) translateX(20px) rotate(calc(var(--rotation, 0deg) + 4deg)) scale(1.05);
+  }
+  75% {
+    transform: translateY(-20px) translateX(-10px) rotate(calc(var(--rotation, 0deg) - 2deg)) scale(1.02);
   }
 }
 
@@ -292,7 +295,8 @@ select {
 }
 
 .animate-float {
-  animation: float 20s ease-in-out infinite;
+  animation: float 25s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-pulse-slow {
@@ -375,10 +379,40 @@ select {
 
 @keyframes shimmer {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(150%);
+    opacity: 0;
+  }
+}
+
+/* Premium Message Bubble Animations */
+@keyframes bubble-drift {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(var(--rotation, 0deg));
+  }
+  33% {
+    transform: translateY(-15px) translateX(8px) rotate(calc(var(--rotation, 0deg) + 2deg));
+  }
+  66% {
+    transform: translateY(-8px) translateX(-8px) rotate(calc(var(--rotation, 0deg) - 2deg));
+  }
+}
+
+@keyframes bubble-glow {
+  0%, 100% {
+    filter: drop-shadow(0 4px 12px rgba(0, 122, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 6px 20px rgba(0, 122, 255, 0.5));
   }
 }
 
@@ -387,7 +421,7 @@ select {
 }
 
 .animate-shimmer {
-  animation: shimmer 3s ease-in-out infinite;
+  animation: shimmer 2.5s linear infinite;
 }
 
 /* Reduced Motion Support */
