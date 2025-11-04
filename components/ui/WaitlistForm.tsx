@@ -26,11 +26,15 @@ export function WaitlistForm() {
 
   const totalSteps = 4;
 
-  // Auto-focus on step change
+  // Auto-focus on step change (disabled on mobile to prevent keyboard issues)
   useEffect(() => {
-    const input = document.querySelector('input:not([type="hidden"])') as HTMLInputElement;
-    if (input) {
-      setTimeout(() => input.focus(), 100);
+    // Only auto-focus on non-mobile devices
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (!isMobile) {
+      const input = document.querySelector('input:not([type="hidden"])') as HTMLInputElement;
+      if (input) {
+        setTimeout(() => input.focus(), 100);
+      }
     }
   }, [step]);
 
@@ -100,8 +104,8 @@ export function WaitlistForm() {
 
   if (isSubmitted) {
     return (
-      <div className="max-w-lg mx-auto px-3 sm:px-4 md:px-0 animate-fade-in">
-        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 shadow-large border border-stone-200">
+      <div className="max-w-lg mx-auto px-4 sm:px-6 md:px-0 animate-fade-in">
+        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 shadow-large border border-stone-200 w-full box-border">
           <div className="text-center">
             <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-burnt-orange/10 to-burnt-orange/20 rounded-full mb-4 sm:mb-5 animate-scale-in">
               <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8 text-burnt-orange" strokeWidth={2.5} />
@@ -136,9 +140,9 @@ export function WaitlistForm() {
   ];
 
   return (
-    <div className="max-w-lg mx-auto px-3 sm:px-4 md:px-0 animate-fade-in-up animation-delay-300">
+    <div className="max-w-lg mx-auto px-4 sm:px-6 md:px-0 animate-fade-in-up animation-delay-300">
       <form
-        className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-stone-300/50 transition-all duration-500 hover:shadow-[0_16px_48px_rgb(234,88,12,0.15)]"
+        className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-stone-300/50 transition-all duration-500 hover:shadow-[0_16px_48px_rgb(234,88,12,0.15)] w-full box-border"
         aria-label="Waitlist signup form"
         onSubmit={(e) => {
           e.preventDefault();
@@ -217,8 +221,7 @@ export function WaitlistForm() {
                   value={formData.name}
                   onChange={(e) => updateFormData('name', e.target.value)}
                   placeholder="e.g. Alex Johnson"
-                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 text-sm sm:text-base bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
-                  autoFocus
+                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 text-base bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
                   required
                   aria-required="true"
                   aria-label="Enter your full name"
@@ -250,8 +253,7 @@ export function WaitlistForm() {
                   value={formData.age}
                   onChange={(e) => updateFormData('age', e.target.value)}
                   placeholder="e.g. 25"
-                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 text-sm sm:text-base bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
-                  autoFocus
+                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 text-base bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
                   min="13"
                   max="120"
                   onKeyDown={(e) => {
@@ -317,8 +319,7 @@ export function WaitlistForm() {
                   value={formData.contact}
                   onChange={(e) => updateFormData('contact', e.target.value)}
                   placeholder="email@example.com"
-                  className="w-full pl-10 sm:pl-12 pr-10 sm:pr-12 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 text-sm sm:text-base bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
-                  autoFocus
+                  className="w-full pl-10 sm:pl-12 pr-10 sm:pr-12 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 text-base bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && isStepValid()) {
                       handleNext();

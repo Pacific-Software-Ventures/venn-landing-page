@@ -126,6 +126,11 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   min-height: 100dvh;
+  position: relative;
+  width: 100%;
+  /* Prevent iOS Safari zoom on input focus */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* Smooth Scrolling */
@@ -133,11 +138,15 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   background: white;
+  width: 100%;
+  position: relative;
 }
 
 /* Prevent horizontal overflow on mobile */
 * {
   max-width: 100%;
+  /* Prevent double-tap zoom on mobile */
+  touch-action: manipulation;
 }
 
 /* Allow specific elements to break out when needed */
@@ -145,6 +154,31 @@ html {
 main,
 section {
   max-width: none;
+}
+
+/* Mobile-specific input fixes */
+@media (max-width: 768px) {
+  input,
+  textarea,
+  select,
+  button {
+    /* Prevent zoom on input focus in iOS */
+    font-size: 16px !important;
+    /* Prevent layout shift when keyboard appears */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* Ensure form containers maintain their padding */
+  form {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Fix for iOS Safari bottom bar */
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 /* Focus Visible Styles */

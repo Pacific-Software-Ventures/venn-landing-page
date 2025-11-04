@@ -7,11 +7,11 @@ import { WaitlistForm } from '../ui/WaitlistForm';
 export function Hero() {
   return (
     <section
-      className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden py-8 sm:py-12 md:py-16"
       aria-label="Hero section"
     >
       <Container>
-        <div className="text-center max-w-6xl mx-auto relative z-10">
+        <div className="text-center max-w-6xl mx-auto relative z-10 w-full">
           {/* Main Heading - Apple/Stripe Style */}
           <h1
             className="text-[1.875rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-normal text-charcoal leading-[1.15] sm:leading-[1.2] tracking-[-0.02em] mb-4 sm:mb-5 md:mb-7 px-4 sm:px-6 animate-fade-in-up animation-delay-100"
