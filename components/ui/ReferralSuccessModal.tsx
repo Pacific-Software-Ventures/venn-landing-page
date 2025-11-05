@@ -90,7 +90,7 @@ export function ReferralSuccessModal({
   };
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 animate-fade-in">
+    <div className="fixed inset-0 z-[11000] flex items-center justify-center p-3 sm:p-4 animate-fade-in">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-md cursor-pointer"

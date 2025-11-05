@@ -8,7 +8,7 @@ export function Rewards() {
   return (
     <>
       {/* Section Divider */}
-      <div className="relative w-full h-24 overflow-hidden z-10">
+      <div className="relative w-full h-24 overflow-hidden z-0">
         {/* Gradient Wave Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-100/40 to-orange-200/50">
           <svg
@@ -43,7 +43,7 @@ export function Rewards() {
         aria-label="Rewards section"
       >
         <Container>
-          <div className="text-center max-w-6xl mx-auto relative z-10 w-full">
+          <div className="text-center max-w-6xl mx-auto relative w-full">
             {/* Header - Matching Hero Style */}
             <h2
               className="text-[1.875rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-normal text-charcoal leading-[1.15] sm:leading-[1.2] tracking-[-0.02em] mb-4 sm:mb-5 md:mb-7 px-4 sm:px-6 animate-fade-in-up animation-delay-100 drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)]"
@@ -74,7 +74,7 @@ export function Rewards() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 max-w-7xl mx-auto px-4">
             {/* Champion - Rank #1 */}
             <div className="relative bg-white rounded-3xl p-6 sm:p-8 shadow-[0_20px_60px_-15px_rgba(249,115,22,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(249,115,22,0.4)] transform hover:scale-[1.02] transition-all duration-300 border-4 border-orange-600">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase z-10">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase">
                 1 Spot Only
               </div>
               <div className="text-center mb-6 mt-3">
@@ -95,7 +95,7 @@ export function Rewards() {
 
             {/* Rank 2-10 */}
             <div className="relative bg-white rounded-3xl p-6 sm:p-8 shadow-[0_20px_60px_-15px_rgba(251,191,36,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(251,191,36,0.4)] transform hover:scale-[1.02] transition-all duration-300 border-4 border-amber-500">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase z-10">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase">
                 9 Spots
               </div>
               <div className="text-center mb-6 mt-3">
@@ -116,7 +116,7 @@ export function Rewards() {
 
             {/* Rank 11-25 */}
             <div className="relative bg-white rounded-3xl p-6 sm:p-8 shadow-[0_20px_60px_-15px_rgba(234,88,12,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(234,88,12,0.4)] transform hover:scale-[1.02] transition-all duration-300 border-4 border-orange-500">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase z-10">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase">
                 15 Spots
               </div>
               <div className="text-center mb-6 mt-3">
@@ -137,7 +137,7 @@ export function Rewards() {
 
             {/* Rank 26-100 */}
             <div className="relative bg-white rounded-3xl p-6 sm:p-8 shadow-[0_20px_60px_-15px_rgba(234,88,12,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(234,88,12,0.4)] transform hover:scale-[1.02] transition-all duration-300 border-4 border-orange-700">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase z-10">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase">
                 75 Spots
               </div>
               <div className="text-center mb-6 mt-3">
