@@ -30,13 +30,14 @@ export function Hero() {
 
           {/* Subheading - Clean Sans Serif */}
           <p
-            className="text-[0.8125rem] sm:text-[0.9375rem] md:text-[1.0625rem] lg:text-[1.125rem] text-stone-800 leading-[1.5] sm:leading-[1.6] mb-4 sm:mb-5 md:mb-6 max-w-2xl mx-auto font-semibold px-6 sm:px-8 animate-fade-in-up animation-delay-200 drop-shadow-[0_1px_4px_rgba(255,255,255,0.9)]"
+            className="text-[0.6875rem] sm:text-[0.75rem] md:text-[0.875rem] lg:text-[0.9375rem] text-stone-600 leading-[1.7] sm:leading-[1.75] mb-5 sm:mb-6 md:mb-7 max-w-md sm:max-w-lg mx-auto font-normal px-6 sm:px-8 animate-fade-in-up animation-delay-200 drop-shadow-[0_1px_4px_rgba(255,255,255,0.9)]"
             style={{
-              textShadow: '0 2px 8px rgba(255,255,255,0.95), 0 4px 16px rgba(255,255,255,0.8)'
+              textShadow: '0 2px 8px rgba(255,255,255,0.95), 0 4px 16px rgba(255,255,255,0.8)',
+              letterSpacing: '0.01em'
             }}
             role="doc-subtitle"
           >
-            The smarter way to turn your plans into reality with the right people around you.
+            AI <span className="relative inline-block text-charcoal font-medium after:content-[''] after:absolute after:left-0 after:bottom-[-1px] after:w-full after:h-[1.5px] after:bg-gradient-to-r after:from-burnt-orange/40 after:via-burnt-orange/80 after:to-burnt-orange/40 after:opacity-90">shouldn't replace humans</span>. Real connection <span className="relative inline-block text-charcoal font-medium after:content-[''] after:absolute after:left-0 after:bottom-[-1px] after:w-full after:h-[1.5px] after:bg-gradient-to-r after:from-burnt-orange/40 after:via-burnt-orange/80 after:to-burnt-orange/40 after:opacity-90">shouldn't take 42 messages</span> to plan. Real friends <span className="relative inline-block text-charcoal font-medium after:content-[''] after:absolute after:left-0 after:bottom-[-1px] after:w-full after:h-[1.5px] after:bg-gradient-to-r after:from-burnt-orange/40 after:via-burnt-orange/80 after:to-burnt-orange/40 after:opacity-90">shouldn't be that hard to find</span>. Join us in making a <span className="relative inline-block text-charcoal font-medium after:content-[''] after:absolute after:left-0 after:bottom-[-1px] after:w-full after:h-[1.5px] after:bg-gradient-to-r after:from-burnt-orange/40 after:via-burnt-orange/80 after:to-burnt-orange/40 after:opacity-90">better offline world</span>.
           </p>
 
           {/* Multi-Step Waitlist Form */}
@@ -44,10 +45,10 @@ export function Hero() {
 
           {/* Trust Badge with Social Proof */}
           <aside
-            className="flex items-center justify-center text-[0.6875rem] sm:text-xs md:text-sm text-stone-500 animate-fade-in-up animation-delay-400 px-4 sm:px-6 mt-3 sm:mt-4 md:mt-5"
+            className="flex items-center justify-center text-[0.8125rem] sm:text-sm md:text-base text-stone-500 animate-fade-in-up animation-delay-400 px-6 sm:px-8 mt-5 sm:mt-6 md:mt-7"
             aria-label="Social proof"
           >
-            <p className="font-medium text-center">
+            <p className="font-medium text-center leading-relaxed">
               Join <strong className="text-charcoal font-semibold">3,000+</strong> people building something meaningful
             </p>
           </aside>

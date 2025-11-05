@@ -306,31 +306,29 @@ export function LeaderboardSidebar() {
       </div>
 
       {/* Mobile/Tablet: Floating Widget */}
-      <div className="lg:hidden fixed bottom-6 right-4 z-[9000]">
-        {/* Compact Widget Bubble - VIRAL */}
+      <div className="lg:hidden fixed top-[42px] sm:top-[44px] right-4 sm:right-6 z-[10000] flex items-center h-16 sm:h-18 pointer-events-none">
+        {/* Compact Widget Bubble - Clean & Symmetrical */}
         {isCollapsed && (
           <button
             onClick={() => setIsCollapsed(false)}
-            className="relative bg-gradient-to-br from-burnt-orange to-amber-600 text-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-3 flex items-center gap-2 animate-fade-in hover:scale-105 cursor-pointer"
+            className="relative group cursor-pointer animate-fade-in active:scale-95 transition-transform duration-150 pointer-events-auto touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="View leaderboard and prizes"
           >
-            <Trophy className="w-5 h-5 flex-shrink-0" />
-
-            {/* Show prize for #1 */}
-            <div className="flex flex-col items-start">
-              <div className="flex items-center gap-1.5">
-                <Trophy className="w-3.5 h-3.5" />
-                <span className="text-xs font-bold whitespace-nowrap">
-                  {loading ? 'Loading...' : 'Grand Prize'}
-                </span>
+            {/* Premium glowing border wrapper with shimmer */}
+            <div className="relative rounded-full p-[3px] bg-burnt-orange shadow-[0_0_24px_rgba(234,88,12,0.5),0_0_48px_rgba(234,88,12,0.25),0_4px_12px_rgba(0,0,0,0.1)] group-hover:shadow-[0_0_36px_rgba(234,88,12,0.6),0_0_72px_rgba(234,88,12,0.3),0_6px_16px_rgba(0,0,0,0.15)] group-active:shadow-[0_0_48px_rgba(234,88,12,0.7),0_0_96px_rgba(234,88,12,0.4)] transition-all duration-500 animate-pulse-ring">
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 rounded-full overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-shimmer" />
               </div>
-              <span className="text-[10px] opacity-90">
-                {loading ? '' : `Live · ${countdown}s`}
-              </span>
+
+              {/* Icon container - WHITE background */}
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center relative z-10 transition-all duration-300 group-hover:scale-110">
+                <Trophy className="w-5 h-5 sm:w-5.5 sm:h-5.5 text-burnt-orange" />
+              </div>
             </div>
 
             {/* Live indicator dot */}
-            {!loading && <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white animate-pulse" />}
+            {!loading && <div className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-burnt-orange rounded-full border-2 border-white animate-pulse z-20" />}
           </button>
         )}
 
@@ -339,23 +337,27 @@ export function LeaderboardSidebar() {
           <>
             {/* Backdrop */}
             <div
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm animate-fade-in z-[8999]"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm animate-fade-in z-[10001]"
               onClick={() => setIsCollapsed(true)}
             />
 
             {/* Floating Card */}
-            <div className="fixed bottom-6 right-4 left-4 max-w-sm mx-auto bg-white rounded-2xl shadow-2xl animate-scale-in p-[2px] bg-gradient-to-br from-burnt-orange via-amber-500 to-burnt-orange z-[9000]">
-              <div className="bg-white rounded-2xl p-4 max-h-[70vh] overflow-y-auto">
+            <div className="fixed bottom-6 right-4 left-4 max-w-sm mx-auto bg-white rounded-2xl shadow-2xl animate-scale-in p-[2px] bg-gradient-to-br from-burnt-orange via-amber-500 to-burnt-orange z-[10002] pointer-events-auto">
+              <div className="bg-white rounded-2xl p-4 max-h-[70vh] overflow-y-auto relative">
                 {/* Header - VIRAL */}
-                <div className="mb-4">
+                <div className="mb-4 relative z-50">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <Trophy className="w-5 h-5 text-burnt-orange" />
                       <h3 className="font-bold text-base text-charcoal">Live Leaderboard</h3>
                     </div>
                     <button
-                      onClick={() => setIsCollapsed(true)}
-                      className="p-2 rounded-full hover:bg-stone-100 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsCollapsed(true);
+                      }}
+                      className="p-2 rounded-full hover:bg-stone-100 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer touch-manipulation bg-white"
+                      style={{ position: 'relative', zIndex: 9999 }}
                       aria-label="Close leaderboard"
                     >
                       <X className="w-5 h-5 text-stone-500" />

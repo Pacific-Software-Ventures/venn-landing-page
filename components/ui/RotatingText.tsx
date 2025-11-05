@@ -35,7 +35,7 @@ export function RotatingText() {
 
   return (
     <span
-      className="relative inline-block text-center mx-auto italic font-black"
+      className="relative inline-block text-center mx-auto italic font-black text-[1.5rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem]"
       style={{
         perspective: '1000px',
         minWidth: 'fit-content',
