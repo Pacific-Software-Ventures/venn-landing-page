@@ -62,7 +62,7 @@ export const REWARD_TIERS: RewardTier[] = [
     value: '$300+',
     rewards: [
       'Free House of Prime Rib Dinner up to $150 (dine with a friend)',
-      '50% off any Venn ticket for your first 3 events',
+      '30% off any Venn ticket for your first 3 events',
       'Early Access 24 hrs before public',
       '"First Cohort" Badge'
     ],
