@@ -9,7 +9,7 @@ import { MessageBubble } from '../ui/MessageBubble';
 export function Hero() {
   return (
     <section
-      className="relative min-h-[100vh] min-h-[100dvh] flex items-center justify-center overflow-hidden py-12 sm:py-16"
+      className="relative min-h-[calc(100vh-120px)] overflow-hidden pt-32 sm:pt-36 pb-16 sm:pb-20"
       aria-label="Hero section"
     >
       <Container>
@@ -30,7 +30,7 @@ export function Hero() {
 
           {/* Subheading - Clean Sans Serif */}
           <p
-            className="text-[0.8125rem] sm:text-[0.9375rem] md:text-[1.0625rem] lg:text-[1.125rem] text-stone-800 leading-[1.5] sm:leading-[1.6] mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto font-semibold px-6 sm:px-8 animate-fade-in-up animation-delay-200 drop-shadow-[0_1px_4px_rgba(255,255,255,0.9)]"
+            className="text-[0.8125rem] sm:text-[0.9375rem] md:text-[1.0625rem] lg:text-[1.125rem] text-stone-800 leading-[1.5] sm:leading-[1.6] mb-4 sm:mb-5 md:mb-6 max-w-2xl mx-auto font-semibold px-6 sm:px-8 animate-fade-in-up animation-delay-200 drop-shadow-[0_1px_4px_rgba(255,255,255,0.9)]"
             style={{
               textShadow: '0 2px 8px rgba(255,255,255,0.95), 0 4px 16px rgba(255,255,255,0.8)'
             }}

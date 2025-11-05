@@ -1,3 +1,7 @@
+'use client';
+
+import { useMemo } from 'react';
+
 interface MessageBubbleProps {
   message: string;
   delay?: number;
@@ -18,43 +22,62 @@ export function MessageBubble({ message, delay = 0, position = 'top-left' }: Mes
     'bottom-right': 'bottom-[25%] right-[14%]',
   };
 
+  // Generate stable rotation based on position and message to avoid hydration mismatch
+  const rotation = useMemo(() => {
+    const hash = (position + message).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    return ((hash % 300) / 100 - 1.5);
+  }, [position, message]);
+
   return (
     <div
       className={`absolute ${positionClasses[position]} z-[2] opacity-0`}
       style={{
         animationDelay: `${delay}ms`,
         animationFillMode: 'forwards',
-        '--rotation': `${Math.random() * 3 - 1.5}deg`,
+        '--rotation': `${rotation}deg`,
         animation: `fade-in 1.2s ease-out ${delay}ms forwards, bubble-drift 20s ease-in-out infinite ${delay + 1000}ms`
       } as React.CSSProperties}
     >
-      {/* Orange message bubble with tail */}
-      <div className="relative max-w-[160px] sm:max-w-[200px] md:max-w-[240px] opacity-55">
-        {/* Message bubble container */}
-        <div className="relative">
+      {/* Authentic iMessage-style bubble */}
+      <div className="relative max-w-[180px] sm:max-w-[220px] md:max-w-[260px] opacity-55">
+        {/* Message bubble container with tail */}
+        <div className="relative bubble-wrapper">
           {/* Main bubble */}
-          <div className="relative bg-gradient-to-br from-[#EA580C] to-[#C2410C] backdrop-blur-sm rounded-[18px] px-3 py-2 sm:px-3.5 sm:py-2.5 shadow-[0_2px_6px_rgba(234,88,12,0.25)]">
-            {/* Subtle inner highlight */}
-            <div className="absolute inset-0 rounded-[18px] bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+          <div className="relative bg-[#EA580C] rounded-[20px] px-3.5 py-2 sm:px-4 sm:py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.15),0_2px_6px_rgba(234,88,12,0.2)]">
+            {/* Subtle inner highlight for dimension */}
+            <div className="absolute inset-0 rounded-[20px] bg-gradient-to-b from-white/8 via-transparent to-black/5 pointer-events-none" />
 
-            <p className="relative text-white text-[0.6875rem] sm:text-[0.75rem] md:text-[0.8125rem] leading-[1.3] font-normal drop-shadow-[0_1px_2px_rgba(0,0,0,0.2)]">
+            <p className="relative text-white text-[0.8125rem] sm:text-[0.875rem] md:text-[0.9375rem] leading-[1.35] font-normal tracking-[0.01em]">
               {message}
             </p>
           </div>
 
-          {/* iMessage tail (bottom-left) - improved shape */}
-          <svg
-            className="absolute -bottom-[1px] left-[2px] text-[#C2410C]"
-            width="20"
-            height="10"
-            viewBox="0 0 20 10"
-            fill="none"
-          >
-            <path
-              d="M 0 0 C 0 2, 0 5, 2 7 C 4 9, 8 10, 12 10 L 20 10 L 20 0 Z"
-              fill="currentColor"
-            />
-          </svg>
+          {/* iMessage tail using pseudo-elements technique */}
+          <style jsx>{`
+            .bubble-wrapper::before {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: -7px;
+              width: 20px;
+              height: 25px;
+              background: #EA580C;
+              border-bottom-right-radius: 16px 14px;
+              z-index: 1;
+            }
+
+            .bubble-wrapper::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: -26px;
+              width: 26px;
+              height: 25px;
+              background: rgba(255, 251, 235, 0.98); /* Match page background */
+              border-bottom-right-radius: 10px;
+              z-index: 2;
+            }
+          `}</style>
         </div>
       </div>
     </div>

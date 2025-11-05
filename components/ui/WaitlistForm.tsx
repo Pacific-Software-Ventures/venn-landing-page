@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight, ArrowLeft, CheckCircle2, User, Hash, Users, Mail } from 'lucide-react';
 import { Button } from './Button';
-import { submitToAirtable } from '@/lib/airtable';
+import { ReferralSuccessModal } from './ReferralSuccessModal';
 
 interface FormData {
   name: string;
@@ -17,12 +17,29 @@ export function WaitlistForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [referralCode, setReferralCode] = useState<string>('');
+  const [referralLink, setReferralLink] = useState<string>('');
+  const [pointsEarned, setPointsEarned] = useState<number>(0);
+  const [leaderboardPosition, setLeaderboardPosition] = useState<number | undefined>(undefined);
+  const [totalUsers, setTotalUsers] = useState<number | undefined>(undefined);
+  const [showReferralModal, setShowReferralModal] = useState(false);
+  const [referredBy, setReferredBy] = useState<string | null>(null);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     age: '',
     gender: '',
     contact: '',
   });
+
+  // Detect referral code from URL on mount
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const refCode = urlParams.get('ref');
+    if (refCode) {
+      setReferredBy(refCode);
+      console.log('Referred by:', refCode);
+    }
+  }, []);
 
   const totalSteps = 4;
 
@@ -151,14 +168,40 @@ export function WaitlistForm() {
     setIsSubmitting(true);
 
     try {
-      const result = await submitToAirtable(formData);
+      // Submit to API with referral code
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          referredBy: referredBy || undefined,
+        }),
+      });
 
-      if (result.success) {
-        console.log('Successfully submitted to Airtable:', result.data);
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        console.log('Successfully submitted to Airtable:', result);
+
+        // Store referral data
+        setReferralCode(result.referralCode);
+        setReferralLink(result.referralLink);
+        setPointsEarned(result.points || 10);
+        setLeaderboardPosition(result.leaderboardPosition);
+        setTotalUsers(result.totalUsers);
+
+        // Show success state
         setIsSubmitted(true);
+
+        // Show referral modal after a short delay
+        setTimeout(() => {
+          setShowReferralModal(true);
+        }, 500);
       } else {
         console.error('Failed to submit:', result.error);
-        alert('There was an error submitting your information. Please try again.');
+        alert(result.error || 'There was an error submitting your information. Please try again.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -189,6 +232,7 @@ export function WaitlistForm() {
 
   if (isSubmitted) {
     return (
+      <>
       <div className="max-w-lg mx-auto px-4 sm:px-6 md:px-0 animate-fade-in">
         {/* Premium border wrapper for success state */}
         <div className="relative rounded-xl sm:rounded-2xl p-[2px] bg-gradient-to-br from-burnt-orange via-amber-500 to-burnt-orange bg-[length:200%_200%] animate-gradient-rotate shadow-[0_0_40px_rgba(234,88,12,0.3),0_0_80px_rgba(234,88,12,0.15)] hover:shadow-[0_0_60px_rgba(234,88,12,0.4),0_0_100px_rgba(234,88,12,0.2)] transition-all duration-700">
@@ -216,6 +260,17 @@ export function WaitlistForm() {
         </div>
         </div>
       </div>
+
+      {/* Referral Success Modal */}
+      <ReferralSuccessModal
+        isOpen={showReferralModal}
+        onClose={() => setShowReferralModal(false)}
+        referralLink={referralLink}
+        points={pointsEarned}
+        leaderboardPosition={leaderboardPosition}
+        totalUsers={totalUsers}
+      />
+      </>
     );
   }
 
@@ -228,6 +283,7 @@ export function WaitlistForm() {
   ];
 
   return (
+    <>
     <div className="max-w-lg mx-auto px-4 sm:px-6 md:px-0 animate-fade-in-up animation-delay-300">
       {/* Animated gradient border wrapper */}
       <div className="relative rounded-xl sm:rounded-2xl p-[2px] bg-gradient-to-br from-burnt-orange via-amber-500 to-burnt-orange bg-[length:200%_200%] animate-gradient-rotate shadow-[0_0_40px_rgba(234,88,12,0.3),0_0_80px_rgba(234,88,12,0.15)] hover:shadow-[0_0_60px_rgba(234,88,12,0.4),0_0_100px_rgba(234,88,12,0.2)] transition-all duration-700">
@@ -479,5 +535,16 @@ export function WaitlistForm() {
       </form>
       </div>
     </div>
+
+      {/* Referral Success Modal */}
+      <ReferralSuccessModal
+        isOpen={showReferralModal}
+        onClose={() => setShowReferralModal(false)}
+        referralLink={referralLink}
+        points={pointsEarned}
+        leaderboardPosition={leaderboardPosition}
+        totalUsers={totalUsers}
+      />
+    </>
   );
 }

@@ -1,5 +1,7 @@
 import { Hero } from '@/components/sections/Hero';
+import { Rewards } from '@/components/sections/Rewards';
 import { Header } from '@/components/ui/Header';
+import { LeaderboardSidebar } from '@/components/ui/LeaderboardSidebar';
 
 export default function Home() {
   return (
@@ -53,7 +55,15 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-100/15 sm:from-orange-100/20 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-amber-100/15 sm:from-amber-100/20 via-transparent to-transparent" />
 
-        <Hero />
+        {/* Hero Section with Leaderboard */}
+        <div className="relative">
+          <Hero />
+          {/* Leaderboard Sidebar - Only visible in Hero section */}
+          <LeaderboardSidebar />
+        </div>
+
+        {/* Rewards Section */}
+        <Rewards />
       </main>
     </>
   );

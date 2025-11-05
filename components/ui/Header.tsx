@@ -3,13 +3,13 @@ import Image from 'next/image';
 
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50" role="banner">
+    <header className="fixed top-0 left-0 right-0 z-[9998] mt-[42px] sm:mt-[44px]" role="banner">
       <div className="px-4 sm:px-6 md:px-8 lg:px-12">
-        <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
+        <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 sm:gap-3 md:gap-3.5 group relative touch-manipulation"
+            className="flex items-center gap-2 sm:gap-3 md:gap-3.5 group relative touch-manipulation z-[9999]"
             aria-label="Venn - Go to homepage"
           >
             {/* Premium glowing border wrapper for logo */}
