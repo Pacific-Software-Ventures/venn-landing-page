@@ -94,7 +94,7 @@ export function RewardsDisplay({ rank, referralCount = 0, compact = false }: Rew
       )}
 
       {/* Next Reward Progress */}
-      {nextReward && (
+      {nextReward && nextReward.nextTier && (
         <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 border-2 border-burnt-orange/20">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
