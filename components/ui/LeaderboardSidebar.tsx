@@ -90,9 +90,9 @@ export function LeaderboardSidebar() {
 
   const getPrizeLabel = (rank: number) => {
     if (rank === 1) return 'Champion';
-    if (rank >= 2 && rank <= 10) return 'Top 10';
-    if (rank >= 11 && rank <= 25) return 'Top 25';
-    if (rank >= 26 && rank <= 100) return 'Top 100';
+    if (rank >= 2 && rank <= 10) return 'Rank 2-10';
+    if (rank >= 11 && rank <= 25) return 'Rank 11-25';
+    if (rank >= 26 && rank <= 100) return 'Rank 26-100';
     return null;
   };
 
@@ -124,7 +124,7 @@ export function LeaderboardSidebar() {
                     <span className="text-[10px] text-stone-400">·</span>
                     <Ticket className="w-3 h-3 text-burnt-orange" />
                     <p className="text-[10px] font-bold text-burnt-orange text-center">
-                      Top 10
+                      Rank 2-10
                     </p>
                   </div>
                 </div>
@@ -370,7 +370,7 @@ export function LeaderboardSidebar() {
                       <span className="text-xs text-stone-400">·</span>
                       <Ticket className="w-3.5 h-3.5 text-burnt-orange" />
                       <p className="text-xs font-bold text-burnt-orange text-center">
-                        Top 10
+                        Rank 2-10
                       </p>
                     </div>
                   </div>

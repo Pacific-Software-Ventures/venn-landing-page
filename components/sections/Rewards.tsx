@@ -8,7 +8,7 @@ export function Rewards() {
   return (
     <>
       {/* Section Divider */}
-      <div className="relative w-full h-24 overflow-hidden z-50">
+      <div className="relative w-full h-24 overflow-hidden z-10">
         {/* Gradient Wave Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-100/40 to-orange-200/50">
           <svg
@@ -80,7 +80,6 @@ export function Rewards() {
               <div className="text-center mb-6 mt-3">
                 <Trophy className="w-12 h-12 sm:w-14 sm:h-14 text-orange-600 mx-auto mb-3" />
                 <h3 className="text-xl sm:text-2xl font-bold text-orange-600 mb-2 tracking-tight">Champion</h3>
-                <div className="text-xs sm:text-sm text-orange-600 font-semibold mb-2 tracking-widest uppercase">Rank #1</div>
                 <div className="text-2xl sm:text-3xl font-black text-orange-600 tracking-tight">$2,000+</div>
               </div>
               <div className="h-px bg-orange-200 mb-4"></div>
@@ -94,15 +93,14 @@ export function Rewards() {
               </ul>
             </div>
 
-            {/* Top 10 */}
+            {/* Rank 2-10 */}
             <div className="relative bg-white rounded-3xl p-6 sm:p-8 shadow-[0_20px_60px_-15px_rgba(251,191,36,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(251,191,36,0.4)] transform hover:scale-[1.02] transition-all duration-300 border-4 border-amber-500">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase z-10">
                 9 Spots
               </div>
               <div className="text-center mb-6 mt-3">
                 <Ticket className="w-12 h-12 sm:w-14 sm:h-14 text-amber-500 mx-auto mb-3" />
-                <h3 className="text-xl sm:text-2xl font-bold text-amber-500 mb-2 tracking-tight">Top 10</h3>
-                <div className="text-xs sm:text-sm text-amber-500 font-semibold mb-2 tracking-widest uppercase">Ranks 2-10</div>
+                <h3 className="text-xl sm:text-2xl font-bold text-amber-500 mb-2 tracking-tight">Rank 2-10</h3>
                 <div className="text-2xl sm:text-3xl font-black text-amber-500 tracking-tight">$500+</div>
               </div>
               <div className="h-px bg-amber-200 mb-4"></div>
@@ -116,15 +114,14 @@ export function Rewards() {
               </ul>
             </div>
 
-            {/* Top 25 */}
+            {/* Rank 11-25 */}
             <div className="relative bg-white rounded-3xl p-6 sm:p-8 shadow-[0_20px_60px_-15px_rgba(234,88,12,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(234,88,12,0.4)] transform hover:scale-[1.02] transition-all duration-300 border-4 border-orange-500">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase z-10">
                 15 Spots
               </div>
               <div className="text-center mb-6 mt-3">
                 <Gift className="w-12 h-12 sm:w-14 sm:h-14 text-orange-500 mx-auto mb-3" />
-                <h3 className="text-xl sm:text-2xl font-bold text-orange-500 mb-2 tracking-tight">Top 25</h3>
-                <div className="text-xs sm:text-sm text-orange-500 font-semibold mb-2 tracking-widest uppercase">Ranks 11-25</div>
+                <h3 className="text-xl sm:text-2xl font-bold text-orange-500 mb-2 tracking-tight">Rank 11-25</h3>
                 <div className="text-2xl sm:text-3xl font-black text-orange-500 tracking-tight">$300+</div>
               </div>
               <div className="h-px bg-orange-200 mb-4"></div>
@@ -138,15 +135,14 @@ export function Rewards() {
               </ul>
             </div>
 
-            {/* Top 100 */}
+            {/* Rank 26-100 */}
             <div className="relative bg-white rounded-3xl p-6 sm:p-8 shadow-[0_20px_60px_-15px_rgba(234,88,12,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(234,88,12,0.4)] transform hover:scale-[1.02] transition-all duration-300 border-4 border-orange-700">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase z-10">
                 75 Spots
               </div>
               <div className="text-center mb-6 mt-3">
                 <Zap className="w-12 h-12 sm:w-14 sm:h-14 text-orange-700 mx-auto mb-3" />
-                <h3 className="text-xl sm:text-2xl font-bold text-orange-700 mb-2 tracking-tight">Top 100</h3>
-                <div className="text-xs sm:text-sm text-orange-700 font-semibold mb-2 tracking-widest uppercase">Ranks 26-100</div>
+                <h3 className="text-xl sm:text-2xl font-bold text-orange-700 mb-2 tracking-tight">Rank 26-100</h3>
                 <div className="text-2xl sm:text-3xl font-black text-orange-700 tracking-tight">$100+</div>
               </div>
               <div className="h-px bg-orange-200 mb-4"></div>

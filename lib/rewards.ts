@@ -36,12 +36,12 @@ export const REWARD_TIERS: RewardTier[] = [
   },
   {
     id: 'top10',
-    name: 'TOP 10',
+    name: 'RANK 2-10',
     rankRange: [2, 10],
     icon: 'ticket',
     color: '#CD7F32',
     gradient: 'from-amber-500 via-orange-500 to-amber-600',
-    badge: 'TOP 10',
+    badge: 'RANK 2-10',
     value: '$500+',
     rewards: [
       '1 Free Ticket to Next Flagship Venn Event',
@@ -53,12 +53,12 @@ export const REWARD_TIERS: RewardTier[] = [
   },
   {
     id: 'top25',
-    name: 'TOP 25',
+    name: 'RANK 11-25',
     rankRange: [11, 25],
     icon: 'gift',
     color: '#EA580C',
     gradient: 'from-orange-500 via-burnt-orange to-orange-600',
-    badge: 'TOP 25',
+    badge: 'RANK 11-25',
     value: '$300+',
     rewards: [
       'Free House of Prime Rib Dinner up to $150 (dine with a friend)',
@@ -70,12 +70,12 @@ export const REWARD_TIERS: RewardTier[] = [
   },
   {
     id: 'top100',
-    name: 'TOP 100',
+    name: 'RANK 26-100',
     rankRange: [26, 100],
     icon: 'zap',
     color: '#F59E0B',
     gradient: 'from-amber-400 via-yellow-500 to-amber-500',
-    badge: 'TOP 100',
+    badge: 'RANK 26-100',
     value: '$100+',
     rewards: [
       'Free 7-Day Venn+ Trial Access Code',
