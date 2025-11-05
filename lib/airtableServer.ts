@@ -55,6 +55,40 @@ export async function findUserByReferralCode(code: string): Promise<WaitlistReco
 }
 
 /**
+ * Find a user by their email
+ */
+export async function findUserByEmail(email: string): Promise<WaitlistRecord | null> {
+  try {
+    const records = await table
+      .select({
+        filterByFormula: `{Contact} = '${email}'`,
+        maxRecords: 1,
+      })
+      .firstPage();
+
+    if (records.length === 0) return null;
+
+    const record = records[0];
+    return {
+      id: record.id,
+      Name: record.get('Name') as string,
+      Age: record.get('Age') as number,
+      Gender: record.get('Gender') as string,
+      Contact: record.get('Contact') as string,
+      ReferralCode: record.get('ReferralCode') as string | undefined,
+      ReferredBy: record.get('ReferredBy') as string | undefined,
+      Points: record.get('Points') as number | undefined,
+      ReferralCount: record.get('ReferralCount') as number | undefined,
+      IPAddress: record.get('IPAddress') as string | undefined,
+      CreatedAt: record.get('CreatedAt') as string | undefined,
+    };
+  } catch (error) {
+    console.error('Error finding user by email:', error);
+    return null;
+  }
+}
+
+/**
  * Count how many times an IP address has signed up
  */
 export async function countSignupsByIP(ipAddress: string): Promise<number> {

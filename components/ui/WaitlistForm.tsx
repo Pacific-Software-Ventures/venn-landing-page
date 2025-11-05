@@ -196,9 +196,15 @@ export function WaitlistForm() {
         setIsSubmitted(true);
 
         // Show referral modal after a short delay
+        // If it's a duplicate, show modal immediately with existing data
         setTimeout(() => {
           setShowReferralModal(true);
-        }, 500);
+        }, result.duplicate ? 0 : 500);
+
+        // If duplicate, show a message
+        if (result.duplicate) {
+          console.log('User already exists, showing existing referral link');
+        }
       } else {
         console.error('Failed to submit:', result.error);
         alert(result.error || 'There was an error submitting your information. Please try again.');

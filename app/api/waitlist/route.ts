@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Airtable from 'airtable';
 import { generateReferralCode } from '@/lib/referralCode';
 import { validateEmailForReferral, cleanEmail, checkIPLimit, checkReferralLimit } from '@/lib/fraudCheck';
-import { findUserByReferralCode, countSignupsByIP, updateUserPoints } from '@/lib/airtableServer';
+import { findUserByReferralCode, findUserByEmail, countSignupsByIP, updateUserPoints } from '@/lib/airtableServer';
 
 const base = new Airtable({
   apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_TOKEN,
@@ -32,6 +32,21 @@ export async function POST(request: NextRequest) {
 
     // Clean email to prevent +1 tricks
     const cleanedEmail = cleanEmail(contact);
+
+    // Check if email already exists
+    const existingUser = await findUserByEmail(cleanedEmail);
+    if (existingUser) {
+      // Return existing user's referral info instead of creating duplicate
+      const referralLink = `${request.nextUrl.origin}?ref=${existingUser.ReferralCode}`;
+      return NextResponse.json({
+        success: true,
+        duplicate: true,
+        referralCode: existingUser.ReferralCode,
+        referralLink: referralLink,
+        points: existingUser.Points || 0,
+        message: 'You are already on the waitlist! Here is your referral link.',
+      });
+    }
 
     // Get IP address for fraud prevention
     const ipAddress = request.headers.get('x-forwarded-for') ||
