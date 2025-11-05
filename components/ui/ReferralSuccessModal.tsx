@@ -187,7 +187,7 @@ export function ReferralSuccessModal({
           {/* Action Buttons */}
           <div className="space-y-3">
             {/* Native Share Button (Mobile Only) */}
-            {typeof navigator !== 'undefined' && navigator.share && (
+            {typeof window !== 'undefined' && typeof navigator !== 'undefined' && 'share' in navigator && (
               <button
                 onClick={handleNativeShare}
                 className="w-full py-3 px-6 bg-burnt-orange text-white font-semibold rounded-xl hover:bg-amber-600 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
