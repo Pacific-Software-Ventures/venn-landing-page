@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
     // Determine points to award
     let pointsForNewUser = 10; // Base signup points
     let pointsForReferrer = 0;
-    let shouldAwardPoints = ipCheck.allowed; // Only award points if IP check passes
+    let shouldAwardPointsToNewUser = ipCheck.allowed; // Only award points to new user if IP check passes
     let referrerRecord = null;
 
     // If they were referred, validate and process
@@ -75,7 +75,9 @@ export async function POST(request: NextRequest) {
         const referralCount = referrerRecord.ReferralCount || 0;
         const referralCheck = checkReferralLimit(referralCount);
 
-        if (referralCheck.allowed && shouldAwardPoints) {
+        // Award points to referrer if they haven't hit their limit
+        // (Independent of new user's IP check - we trust the referrer)
+        if (referralCheck.allowed) {
           pointsForReferrer = 20; // Award 20 points to referrer
         }
       }
@@ -91,7 +93,7 @@ export async function POST(request: NextRequest) {
           Contact: cleanedEmail,
           ReferralCode: newReferralCode,
           ReferredBy: referredBy || '',
-          Points: shouldAwardPoints ? pointsForNewUser : 0,
+          Points: shouldAwardPointsToNewUser ? pointsForNewUser : 0,
           ReferralCount: 0,
           IPAddress: ipAddress,
         },
@@ -143,8 +145,8 @@ export async function POST(request: NextRequest) {
       recordId: newUserId,
       referralCode: newReferralCode,
       referralLink: referralLink,
-      points: shouldAwardPoints ? pointsForNewUser : 0,
-      flagged: !shouldAwardPoints,
+      points: shouldAwardPointsToNewUser ? pointsForNewUser : 0,
+      flagged: !shouldAwardPointsToNewUser,
       leaderboardPosition,
       totalUsers,
     });
