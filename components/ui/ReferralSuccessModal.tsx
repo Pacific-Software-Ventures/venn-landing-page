@@ -98,9 +98,9 @@ export function ReferralSuccessModal({
       />
 
       {/* Modal - Mobile optimized with max height and scroll */}
-      <div className="relative w-full max-w-md max-h-[90vh] bg-white rounded-2xl shadow-2xl animate-scale-in overflow-hidden z-10">
+      <div className="relative w-full max-w-md max-h-[90vh] bg-white rounded-2xl shadow-2xl animate-scale-in overflow-hidden">
         {/* Animated gradient border effect */}
-        <div className="absolute inset-0 p-[2px] rounded-2xl bg-gradient-to-br from-burnt-orange via-amber-500 to-burnt-orange bg-[length:200%_200%] animate-gradient-rotate pointer-events-none" style={{ zIndex: -1 }} />
+        <div className="absolute inset-0 p-[2px] rounded-2xl bg-gradient-to-br from-burnt-orange via-amber-500 to-burnt-orange bg-[length:200%_200%] animate-gradient-rotate pointer-events-none -z-10" />
 
         {/* Close Button - Larger touch target on mobile */}
         <button

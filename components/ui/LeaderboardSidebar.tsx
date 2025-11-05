@@ -306,12 +306,12 @@ export function LeaderboardSidebar() {
       </div>
 
       {/* Mobile/Tablet: Floating Widget */}
-      <div className="lg:hidden fixed bottom-6 right-4 z-30">
+      <div className="lg:hidden fixed bottom-6 right-4 z-[9000]">
         {/* Compact Widget Bubble - VIRAL */}
-        {isCollapsed && leaderboard.length > 0 && (
+        {isCollapsed && (
           <button
             onClick={() => setIsCollapsed(false)}
-            className="relative bg-gradient-to-br from-burnt-orange to-amber-600 text-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-3 flex items-center gap-2 animate-fade-in hover:scale-105"
+            className="relative bg-gradient-to-br from-burnt-orange to-amber-600 text-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-3 flex items-center gap-2 animate-fade-in hover:scale-105 cursor-pointer"
             aria-label="View leaderboard and prizes"
           >
             <Trophy className="w-5 h-5 flex-shrink-0" />
@@ -321,16 +321,16 @@ export function LeaderboardSidebar() {
               <div className="flex items-center gap-1.5">
                 <Trophy className="w-3.5 h-3.5" />
                 <span className="text-xs font-bold whitespace-nowrap">
-                  Grand Prize
+                  {loading ? 'Loading...' : 'Grand Prize'}
                 </span>
               </div>
               <span className="text-[10px] opacity-90">
-                Live · {countdown}s
+                {loading ? '' : `Live · ${countdown}s`}
               </span>
             </div>
 
             {/* Live indicator dot */}
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white animate-pulse" />
+            {!loading && <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white animate-pulse" />}
           </button>
         )}
 
@@ -339,12 +339,12 @@ export function LeaderboardSidebar() {
           <>
             {/* Backdrop */}
             <div
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm animate-fade-in -z-10"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm animate-fade-in z-[8999]"
               onClick={() => setIsCollapsed(true)}
             />
 
             {/* Floating Card */}
-            <div className="fixed bottom-6 right-4 left-4 max-w-sm mx-auto bg-white rounded-2xl shadow-2xl animate-scale-in p-[2px] bg-gradient-to-br from-burnt-orange via-amber-500 to-burnt-orange z-30">
+            <div className="fixed bottom-6 right-4 left-4 max-w-sm mx-auto bg-white rounded-2xl shadow-2xl animate-scale-in p-[2px] bg-gradient-to-br from-burnt-orange via-amber-500 to-burnt-orange z-[9000]">
               <div className="bg-white rounded-2xl p-4 max-h-[70vh] overflow-y-auto">
                 {/* Header - VIRAL */}
                 <div className="mb-4">
@@ -355,7 +355,7 @@ export function LeaderboardSidebar() {
                     </div>
                     <button
                       onClick={() => setIsCollapsed(true)}
-                      className="p-2 rounded-full hover:bg-stone-100 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                      className="p-2 rounded-full hover:bg-stone-100 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer"
                       aria-label="Close leaderboard"
                     >
                       <X className="w-5 h-5 text-stone-500" />
