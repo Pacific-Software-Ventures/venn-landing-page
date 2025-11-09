@@ -129,7 +129,7 @@ export function ReferralSuccessModal({
           <div className="flex items-center justify-center gap-2 mb-6">
             <Gift className="w-5 h-5 text-burnt-orange" />
             <p className="text-base font-semibold text-burnt-orange">
-              You earned {points} points!
+              You earned {points} points! Earn 20 more for each friend you refer to move up the leaderboard and win rewards.
             </p>
           </div>
 

@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Venn - Stop Scrolling, Start Living | Connect with Real People",
+  title: "Win $10K in IRL rewards with your friends in SF - Venn",
   description: "Join 3,000+ people building meaningful connections and turning plans into reality. Venn helps you meet like-minded individuals, create authentic friendships, and experience life together. Sign up for early access today.",
   keywords: [
     "social connection app",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Venn - Stop Scrolling, Start Living",
+    title: "Win $10K in IRL rewards with your friends in SF - Venn",
     description: "The smarter way to turn your plans into reality with the right people around you. Join 3,000+ people building something meaningful.",
     url: 'https://venn.app',
     siteName: 'Venn',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Venn - Stop Scrolling, Start Living",
+    title: "Win $10K in IRL rewards with your friends in SF - Venn",
     description: "Join 3,000+ people building meaningful connections. Turn your plans into reality with the right people around you.",
     creator: '@vennapp',
   },
