@@ -42,14 +42,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://venn.app'),
+  metadataBase: new URL('https://vennapp.co'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Win $10K in IRL rewards with your friends in SF - Venn",
     description: "The smarter way to turn your plans into reality with the right people around you. Join 3,000+ people building something meaningful.",
-    url: 'https://venn.app',
+    url: 'https://vennapp.co',
     siteName: 'Venn',
     locale: 'en_US',
     type: 'website',
@@ -89,7 +89,7 @@ export default function RootLayout({
     '@type': 'WebApplication',
     name: 'Venn',
     description: 'A social connection platform helping people turn plans into reality with meaningful connections',
-    url: 'https://venn.app',
+    url: 'https://vennapp.co',
     applicationCategory: 'SocialNetworkingApplication',
     operatingSystem: 'Web, iOS, Android',
     offers: {
@@ -105,7 +105,7 @@ export default function RootLayout({
     author: {
       '@type': 'Organization',
       name: 'Venn',
-      url: 'https://venn.app',
+      url: 'https://vennapp.co',
     },
   };
 
