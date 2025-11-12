@@ -11,10 +11,42 @@ export function WhyJoin() {
   ];
 
   return (
-    <section
-      className="relative py-16 sm:py-20 md:py-24 overflow-hidden"
-      aria-label="Why join Venn"
-    >
+    <>
+      {/* Section Divider */}
+      <div className="relative w-full h-24 overflow-hidden z-0">
+        {/* Gradient Wave Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-100/40 to-orange-200/50">
+          <svg
+            className="absolute bottom-0 w-full h-16"
+            preserveAspectRatio="none"
+            viewBox="0 0 1440 100"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0,50 Q360,0 720,50 T1440,50 L1440,100 L0,100 Z"
+              className="fill-amber-100/60"
+            />
+            <path
+              d="M0,60 Q360,20 720,60 T1440,60 L1440,100 L0,100 Z"
+              className="fill-orange-100/70"
+            />
+            <path
+              d="M0,70 Q360,40 720,70 T1440,70 L1440,100 L0,100 Z"
+              className="fill-orange-200/50"
+            />
+          </svg>
+        </div>
+
+        {/* Shimmer effect */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-200/30 to-transparent -translate-x-full animate-shimmer" />
+        </div>
+      </div>
+
+      <section
+        className="relative py-16 sm:py-20 md:py-24 overflow-hidden"
+        aria-label="Why join Venn"
+      >
       <Container>
         <div className="text-center max-w-4xl mx-auto relative z-10 w-full px-4 sm:px-6">
           {/* Tagline */}
@@ -70,5 +102,6 @@ export function WhyJoin() {
         backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'1.2\' numOctaves=\'3\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
       }} />
     </section>
+    </>
   );
 }
