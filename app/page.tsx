@@ -1,4 +1,5 @@
 import { Hero } from '@/components/sections/Hero';
+import { WhyJoin } from '@/components/sections/WhyJoin';
 import { Rewards } from '@/components/sections/Rewards';
 import { Header } from '@/components/ui/Header';
 import { LeaderboardSidebar } from '@/components/ui/LeaderboardSidebar';
@@ -61,6 +62,9 @@ export default function Home() {
           {/* Leaderboard Sidebar - Only visible in Hero section */}
           <LeaderboardSidebar />
         </div>
+
+        {/* Why Join Section */}
+        <WhyJoin />
 
         {/* Rewards Section */}
         <Rewards />
