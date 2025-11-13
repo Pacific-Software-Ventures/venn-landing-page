@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Banner } from "@/components/ui/Banner";
+import { Footer } from "@/components/ui/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -128,6 +129,7 @@ export default function RootLayout({
       >
         <Banner type="countdown" />
         {children}
+        <Footer />
       </body>
     </html>
   );

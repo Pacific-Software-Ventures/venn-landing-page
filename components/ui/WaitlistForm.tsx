@@ -24,6 +24,7 @@ export function WaitlistForm() {
   const [totalUsers, setTotalUsers] = useState<number | undefined>(undefined);
   const [showReferralModal, setShowReferralModal] = useState(false);
   const [referredBy, setReferredBy] = useState<string | null>(null);
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     age: '',
@@ -230,7 +231,7 @@ export function WaitlistForm() {
       case 3:
         return formData.gender.length > 0;
       case 4:
-        return formData.contact.trim().length > 0 && (formData.contact.includes('@') || /^\d{10,}$/.test(formData.contact.replace(/\D/g, '')));
+        return formData.contact.trim().length > 0 && (formData.contact.includes('@') || /^\d{10,}$/.test(formData.contact.replace(/\D/g, ''))) && acceptedTerms;
       default:
         return false;
     }
@@ -471,7 +472,7 @@ export function WaitlistForm() {
               <p className="text-xs sm:text-sm text-stone-500 mb-2.5 sm:mb-3">
                 We'll send you exclusive early access details
               </p>
-              <div className="relative">
+              <div className="relative mb-4">
                 <div className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-stone-400">
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
@@ -489,11 +490,45 @@ export function WaitlistForm() {
                     }
                   }}
                 />
-                {formData.contact && isStepValid() && (
+                {formData.contact && formData.contact.includes('@') && (
                   <div className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-green-500">
                     <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 animate-scale-in" strokeWidth={2.5} />
                   </div>
                 )}
+              </div>
+
+              {/* Terms and Conditions Checkbox */}
+              <div className="flex items-start gap-3 p-3 sm:p-4 bg-stone-50 rounded-lg border border-stone-200">
+                <input
+                  type="checkbox"
+                  id="terms-checkbox"
+                  checked={acceptedTerms}
+                  onChange={(e) => setAcceptedTerms(e.target.checked)}
+                  className="mt-0.5 w-4 h-4 sm:w-5 sm:h-5 rounded border-2 border-stone-300 text-burnt-orange focus:ring-2 focus:ring-burnt-orange/20 focus:ring-offset-0 cursor-pointer flex-shrink-0"
+                  required
+                  aria-required="true"
+                  aria-label="Accept Terms of Service and Privacy Policy"
+                />
+                <label htmlFor="terms-checkbox" className="text-xs sm:text-sm text-stone-600 leading-relaxed cursor-pointer">
+                  I agree to the{' '}
+                  <a
+                    href="/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-burnt-orange hover:text-burnt-orange-dark font-medium underline underline-offset-2 hover:underline-offset-4 transition-all"
+                  >
+                    Terms of Service
+                  </a>
+                  {' '}and{' '}
+                  <a
+                    href="/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-burnt-orange hover:text-burnt-orange-dark font-medium underline underline-offset-2 hover:underline-offset-4 transition-all"
+                  >
+                    Privacy Policy
+                  </a>
+                </label>
               </div>
             </div>
           )}
