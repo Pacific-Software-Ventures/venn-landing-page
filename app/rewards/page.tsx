@@ -437,7 +437,7 @@ export default function RewardsProgram() {
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
               <li>Email sent to the address on file</li>
               <li>Public announcement on vennapp.co</li>
-              <li>Social media announcement (Twitter: @vennapp)</li>
+              <li>Social media announcement (X/Twitter: @zedfromvenn, Instagram: @app.venn)</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-gray-900 mb-3">7.2 Response Deadline</h3>

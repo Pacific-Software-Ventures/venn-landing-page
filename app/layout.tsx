@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Win $10K in IRL rewards with your friends in SF - Venn",
     description: "Join 3,000+ people building meaningful connections. Turn your plans into reality with the right people around you.",
-    creator: '@vennapp',
+    creator: '@zedfromvenn',
   },
   robots: {
     index: true,
