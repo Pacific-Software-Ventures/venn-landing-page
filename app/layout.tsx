@@ -19,8 +19,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Win $10K in IRL rewards with your friends in SF - Venn",
-  description: "Join 3,000+ people building meaningful connections and turning plans into reality. Venn helps you meet like-minded individuals, create authentic friendships, and experience life together. Sign up for early access today.",
+  title: "A better way to connect and build real relationships that last - Venn",
+  description: "Earn $10K in prizes after signing up for Venn. Join 4,000+ people in going IRL and building meaningful connections that turn plans into reality.",
   keywords: [
     "social connection app",
     "meet new people",
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Win $10K in IRL rewards with your friends in SF - Venn",
-    description: "The smarter way to turn your plans into reality with the right people around you. Join 3,000+ people building something meaningful.",
+    title: "A better way to connect and build real relationships that last.",
+    description: "Earn $10K in prizes after signing up for Venn. Join 4,000+ people in going IRL.",
     url: 'https://vennapp.co',
     siteName: 'Venn',
     locale: 'en_US',
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Win $10K in IRL rewards with your friends in SF - Venn",
-    description: "Join 3,000+ people building meaningful connections. Turn your plans into reality with the right people around you.",
+    title: "A better way to connect and build real relationships that last.",
+    description: "Earn $10K in prizes after signing up for Venn. Join 4,000+ people in going IRL.",
     creator: '@zedfromvenn',
   },
   robots: {
@@ -101,7 +101,7 @@ export default function RootLayout({
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.8',
-      ratingCount: '3000',
+      ratingCount: '4000',
     },
     author: {
       '@type': 'Organization',
