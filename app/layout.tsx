@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "A better way to connect and build real relationships that last - Venn",
+  title: "Don't leave real connections up to chance - Venn",
   description: "Earn $10K in prizes after signing up for Venn. Join 4,000+ people in going IRL and building meaningful connections that turn plans into reality.",
   keywords: [
     "social connection app",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "A better way to connect and build real relationships that last.",
+    title: "Don't leave real connections up to chance",
     description: "Earn $10K in prizes after signing up for Venn. Join 4,000+ people in going IRL.",
     url: 'https://vennapp.co',
     siteName: 'Venn',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "A better way to connect and build real relationships that last.",
+    title: "Don't leave real connections up to chance",
     description: "Earn $10K in prizes after signing up for Venn. Join 4,000+ people in going IRL.",
     creator: '@zedfromvenn',
   },
