@@ -11,10 +11,10 @@ const base = new Airtable({
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, age, gender, contact, referredBy } = body;
+    const { name, age, gender, contact, phone, referredBy } = body;
 
     // Validate the data
-    if (!name || !age || !gender || !contact) {
+    if (!name || !age || !gender || !contact || !phone) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
@@ -91,6 +91,7 @@ export async function POST(request: NextRequest) {
           Age: parseInt(age),
           Gender: gender,
           Contact: cleanedEmail,
+          Phone: phone,
           ReferralCode: newReferralCode,
           ReferredBy: referredBy || '',
           Points: shouldAwardPointsToNewUser ? pointsForNewUser : 0,

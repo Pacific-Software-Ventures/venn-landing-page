@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ArrowRight, ArrowLeft, CheckCircle2, User, Hash, Users, Mail } from 'lucide-react';
+import { ArrowRight, ArrowLeft, CheckCircle2, User, Hash, Users, Mail, Phone } from 'lucide-react';
 import { Button } from './Button';
 import { ReferralSuccessModal } from './ReferralSuccessModal';
 
@@ -10,6 +10,7 @@ interface FormData {
   age: string;
   gender: string;
   contact: string;
+  phone: string;
 }
 
 export function WaitlistForm() {
@@ -30,6 +31,7 @@ export function WaitlistForm() {
     age: '',
     gender: '',
     contact: '',
+    phone: '',
   });
 
   // Detect referral code from URL on mount
@@ -42,7 +44,7 @@ export function WaitlistForm() {
     }
   }, []);
 
-  const totalSteps = 4;
+  const totalSteps = 5;
 
   // Auto-focus disabled to prevent layout shift and scrolling issues
   // Users can manually tap/click inputs when ready
@@ -231,7 +233,9 @@ export function WaitlistForm() {
       case 3:
         return formData.gender.length > 0;
       case 4:
-        return formData.contact.trim().length > 0 && (formData.contact.includes('@') || /^\d{10,}$/.test(formData.contact.replace(/\D/g, ''))) && acceptedTerms;
+        return formData.contact.trim().length > 0 && formData.contact.includes('@');
+      case 5:
+        return formData.phone.trim().length > 0 && /^\d{10,}$/.test(formData.phone.replace(/\D/g, '')) && acceptedTerms;
       default:
         return false;
     }
@@ -257,7 +261,7 @@ export function WaitlistForm() {
               onClick={() => {
                 setIsSubmitted(false);
                 setStep(1);
-                setFormData({ name: '', age: '', gender: '', contact: '' });
+                setFormData({ name: '', age: '', gender: '', contact: '', phone: '' });
               }}
               className="text-sm sm:text-base"
             >
@@ -286,7 +290,8 @@ export function WaitlistForm() {
     { icon: User, label: 'Personal Info', field: 'name' },
     { icon: Hash, label: 'Age', field: 'age' },
     { icon: Users, label: 'Identity', field: 'gender' },
-    { icon: Mail, label: 'Contact', field: 'contact' },
+    { icon: Mail, label: 'Email', field: 'contact' },
+    { icon: Phone, label: 'Phone', field: 'phone' },
   ];
 
   return (
@@ -314,13 +319,13 @@ export function WaitlistForm() {
             <div className="absolute left-[5%] right-[5%] h-0.5 bg-stone-200">
               <div
                 className="h-full bg-burnt-orange transition-all duration-500"
-                style={{ width: `${((step - 1) / 3) * 100}%` }}
+                style={{ width: `${((step - 1) / 4) * 100}%` }}
               />
             </div>
 
             {/* Step circles */}
             <div className="relative w-full flex justify-between px-[2%]">
-              {[1, 2, 3, 4].map((stepNum) => {
+              {[1, 2, 3, 4, 5].map((stepNum) => {
                 const StepIcon = stepInfo[stepNum - 1].icon;
                 const isActive = stepNum === step;
                 const isCompleted = stepNum < step;
@@ -463,16 +468,16 @@ export function WaitlistForm() {
             </div>
           )}
 
-          {/* Step 4: Contact */}
+          {/* Step 4: Email */}
           {step === 4 && (
             <div className="animate-slide-in w-full" key="step4">
               <label className="block mb-2 sm:mb-3 text-sm sm:text-base font-bold text-charcoal">
-                How can we reach you?
+                What's your email?
               </label>
               <p className="text-xs sm:text-sm text-stone-500 mb-2.5 sm:mb-3">
                 We'll send you exclusive early access details
               </p>
-              <div className="relative mb-4">
+              <div className="relative">
                 <div className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-stone-400">
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
@@ -491,6 +496,42 @@ export function WaitlistForm() {
                   }}
                 />
                 {formData.contact && formData.contact.includes('@') && (
+                  <div className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-green-500">
+                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 animate-scale-in" strokeWidth={2.5} />
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Step 5: Phone Number */}
+          {step === 5 && (
+            <div className="animate-slide-in w-full" key="step5">
+              <label className="block mb-2 sm:mb-3 text-sm sm:text-base font-bold text-charcoal">
+                What's your phone number?
+              </label>
+              <p className="text-xs sm:text-sm text-stone-500 mb-2.5 sm:mb-3">
+                We'll use this to keep you updated
+              </p>
+              <div className="relative mb-4">
+                <div className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-stone-400">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
+                <input
+                  type="tel"
+                  inputMode="tel"
+                  value={formData.phone}
+                  onChange={(e) => updateFormData('phone', e.target.value)}
+                  placeholder="(555) 123-4567"
+                  autoComplete="tel"
+                  className="w-full pl-10 sm:pl-12 pr-10 sm:pr-12 py-3 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-stone-200 focus:border-burnt-orange focus:ring-4 focus:ring-burnt-orange/10 outline-none transition-all duration-200 bg-white placeholder:text-stone-400 shadow-sm hover:border-stone-300"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && isStepValid()) {
+                      handleNext();
+                    }
+                  }}
+                />
+                {formData.phone && /^\d{10,}$/.test(formData.phone.replace(/\D/g, '')) && (
                   <div className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-green-500">
                     <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 animate-scale-in" strokeWidth={2.5} />
                   </div>

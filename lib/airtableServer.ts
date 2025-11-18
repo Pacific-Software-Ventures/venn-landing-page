@@ -12,6 +12,7 @@ export interface WaitlistRecord {
   Age: number;
   Gender: string;
   Contact: string;
+  Phone?: string;
   ReferralCode?: string;
   ReferredBy?: string;
   Points?: number;
@@ -41,6 +42,7 @@ export async function findUserByReferralCode(code: string): Promise<WaitlistReco
       Age: record.get('Age') as number,
       Gender: record.get('Gender') as string,
       Contact: record.get('Contact') as string,
+      Phone: record.get('Phone') as string | undefined,
       ReferralCode: record.get('ReferralCode') as string | undefined,
       ReferredBy: record.get('ReferredBy') as string | undefined,
       Points: record.get('Points') as number | undefined,
@@ -75,6 +77,7 @@ export async function findUserByEmail(email: string): Promise<WaitlistRecord | n
       Age: record.get('Age') as number,
       Gender: record.get('Gender') as string,
       Contact: record.get('Contact') as string,
+      Phone: record.get('Phone') as string | undefined,
       ReferralCode: record.get('ReferralCode') as string | undefined,
       ReferredBy: record.get('ReferredBy') as string | undefined,
       Points: record.get('Points') as number | undefined,
