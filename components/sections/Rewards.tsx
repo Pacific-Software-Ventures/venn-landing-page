@@ -167,7 +167,7 @@ export function Rewards() {
               <p className="text-base sm:text-lg text-stone-700 leading-[1.75] font-normal">
                 <span className="font-semibold text-burnt-orange">Share your unique referral link</span> with friends and watch your rank climb as they sign up.
                 Each verified signup earns you points on the live leaderboard.
-                The top performers when the competition ends on <span className="font-semibold text-charcoal">December 31, 2025</span> will win incredible prizes.
+                The top performers when the competition ends on <span className="font-semibold text-charcoal">January 20, 2026</span> will win incredible prizes.
                 It's that simple—the more people you bring to Venn, the bigger your rewards.
               </p>
             </div>
@@ -180,7 +180,7 @@ export function Rewards() {
               <p className="text-base sm:text-lg text-stone-700 leading-[1.75] font-normal">
                 Only <span className="font-semibold text-charcoal">valid signups count</span>—fake accounts will be disqualified.
                 The leaderboard updates in real-time so you can track your progress.
-                The competition closes on <span className="font-semibold text-charcoal">December 31, 2025 at 11:59 PM EST</span>, and winners will be notified in January 2026.
+                The competition closes on <span className="font-semibold text-charcoal">January 20, 2026 at 11:59 PM EST</span>, and winners will be notified in February 2026.
                 You'll have 30 days to claim your prizes.
                 <span className="font-semibold text-burnt-orange"> No purchase necessary</span>—it's completely free to join and compete.
               </p>

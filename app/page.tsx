@@ -20,7 +20,7 @@ export default function Home() {
           <li>Meet new people based on shared interests and activities</li>
           <li>Build authentic connections and lasting friendships</li>
           <li>Turn your plans into reality with the right people</li>
-          <li>Join 3,000+ active community members</li>
+          <li>Join 5,000+ active community members</li>
           <li>Experience real-life social activities, not just online chat</li>
           <li>Safe, inclusive community for everyone</li>
         </ul>

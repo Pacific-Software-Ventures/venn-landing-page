@@ -40,7 +40,7 @@ export default function RewardsProgram() {
             <div>
               <h3 className="font-semibold text-gray-900 mb-2">Important Information</h3>
               <ul className="text-sm text-gray-700 space-y-1">
-                <li><strong>Program End:</strong> December 31, 2025 at 11:59 PM EST</li>
+                <li><strong>Program End:</strong> January 20, 2026 at 11:59 PM EST</li>
                 <li><strong>Total Prize Value:</strong> $10,000+</li>
                 <li><strong>No Purchase Necessary</strong> - Free to join and participate</li>
                 <li><strong>Age Requirement:</strong> 13 years or older</li>
@@ -241,7 +241,7 @@ export default function RewardsProgram() {
           <section id="prizes" className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Prize Tiers and Values</h2>
             <p className="text-gray-700 mb-4">
-              Prizes will be awarded based on final leaderboard standings when the Program ends on December 31, 2025 at 11:59 PM EST.
+              Prizes will be awarded based on final leaderboard standings when the Program ends on January 20, 2026 at 11:59 PM EST.
             </p>
 
             <div className="space-y-6">
@@ -408,7 +408,7 @@ export default function RewardsProgram() {
             <h3 className="text-xl font-semibold text-gray-900 mb-3">6.1 Start and End Dates</h3>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
               <li><strong>Program Start:</strong> Began with initial waitlist launch</li>
-              <li><strong>Program End:</strong> December 31, 2025 at 11:59:59 PM Eastern Standard Time (EST)</li>
+              <li><strong>Program End:</strong> January 20, 2026 at 11:59:59 PM Eastern Standard Time (EST)</li>
             </ul>
             <p className="text-gray-700 mb-4">
               Signups completed after the end time will NOT be eligible for prizes, even if using a referral link from before the deadline.
@@ -416,9 +416,9 @@ export default function RewardsProgram() {
 
             <h3 className="text-xl font-semibold text-gray-900 mb-3">6.2 Winner Determination</h3>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-              <li><strong>Leaderboard Freeze:</strong> Final standings will be frozen on January 1, 2026 at 12:00 AM EST</li>
-              <li><strong>Verification Period:</strong> January 1-7, 2026 (Venn will verify accounts for fraud)</li>
-              <li><strong>Winners Announced:</strong> By January 15, 2026</li>
+              <li><strong>Leaderboard Freeze:</strong> Final standings will be frozen on January 21, 2026 at 12:00 AM EST</li>
+              <li><strong>Verification Period:</strong> January 21-27, 2026 (Venn will verify accounts for fraud)</li>
+              <li><strong>Winners Announced:</strong> By February 5, 2026</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-gray-900 mb-3">6.3 Time Zone</h3>

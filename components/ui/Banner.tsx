@@ -18,7 +18,7 @@ export function Banner({
   message,
   dismissible = true,
   onDismiss,
-  countdownDate = new Date('2025-12-31T23:59:59'),
+  countdownDate = new Date('2026-01-20T23:59:59'),
 }: BannerProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [timeLeft, setTimeLeft] = useState({

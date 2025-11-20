@@ -165,7 +165,7 @@ export default function PrivacyPolicy() {
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
               <li><strong>Waitlist Data:</strong> Retained until you request deletion or the Service launches</li>
-              <li><strong>Referral Program Data:</strong> Retained through December 31, 2025 (end of program) plus 30 days for prize claiming</li>
+              <li><strong>Referral Program Data:</strong> Retained through January 20, 2026 (end of program) plus 30 days for prize claiming</li>
               <li><strong>IP Addresses:</strong> Retained for 90 days for fraud prevention, then anonymized</li>
               <li><strong>Communication Records:</strong> Retained for customer support purposes for up to 2 years</li>
             </ul>

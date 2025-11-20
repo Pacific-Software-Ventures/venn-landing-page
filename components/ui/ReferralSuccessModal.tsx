@@ -180,7 +180,7 @@ export function ReferralSuccessModal({
           {/* Social Proof */}
           <div className="text-center mb-6">
             <p className="text-sm text-stone-500">
-              Join <strong className="text-charcoal">3,000+</strong> people already on the waitlist
+              Join <strong className="text-charcoal">5,000+</strong> people already on the waitlist
             </p>
           </div>
 

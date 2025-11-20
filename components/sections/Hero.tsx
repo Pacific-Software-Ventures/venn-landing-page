@@ -49,7 +49,7 @@ export function Hero() {
             aria-label="Social proof"
           >
             <p className="font-medium text-center leading-relaxed">
-              Join <strong className="text-charcoal font-semibold">3,000+</strong> people building something meaningful
+              Join <strong className="text-charcoal font-semibold">5,000+</strong> people building something meaningful
             </p>
           </aside>
         </div>

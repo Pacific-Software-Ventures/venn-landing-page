@@ -190,7 +190,7 @@ export function RewardsShowcase({ isOpen, onClose, currentRank }: RewardsShowcas
           {/* Social Proof */}
           <div className="mt-6 text-center">
             <p className="text-sm text-stone-500">
-              <strong className="text-charcoal">3,000+</strong> people competing ·
+              <strong className="text-charcoal">5,000+</strong> people competing ·
               <strong className="text-burnt-orange"> Limited spots</strong> ·
               <strong className="text-charcoal"> Real prizes</strong>
             </p>
