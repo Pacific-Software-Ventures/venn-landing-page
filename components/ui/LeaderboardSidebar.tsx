@@ -47,7 +47,7 @@ export function LeaderboardSidebar() {
   const fetchLeaderboard = async () => {
     setIsUpdating(true);
     try {
-      const response = await fetch('/api/leaderboard');
+      const response = await fetch('/api/leaderboard?limit=10');
       const data = await response.json();
 
       if (data.success) {
@@ -234,7 +234,7 @@ export function LeaderboardSidebar() {
               </div>
 
               {/* Footer with live countdown - Fixed */}
-              <div className="p-3 pt-2 border-t border-stone-200 flex-shrink-0">
+              <div className="p-3 pt-2 border-t border-stone-200 flex-shrink-0 space-y-2">
                 <div className="flex items-center justify-between text-[10px]">
                   <div className="flex items-center gap-1.5 text-stone-500">
                     <TrendingUp className={`w-3 h-3 ${isUpdating ? 'animate-spin' : ''}`} />
@@ -249,6 +249,14 @@ export function LeaderboardSidebar() {
                     </span>
                   </div>
                 </div>
+
+                {/* View Full Leaderboard Link */}
+                <Link
+                  href="/leaderboard"
+                  className="block text-center text-[10px] font-semibold text-burnt-orange hover:text-burnt-orange-dark transition-colors hover:underline"
+                >
+                  View Full Leaderboard →
+                </Link>
               </div>
             </div>
           </div>
@@ -474,7 +482,7 @@ export function LeaderboardSidebar() {
             )}
 
             {/* Footer with countdown */}
-            <div className="mt-4 pt-4 border-t border-stone-200">
+            <div className="mt-4 pt-4 border-t border-stone-200 space-y-3">
               <div className="flex items-center justify-between text-xs">
                 <div className="flex items-center gap-2 text-stone-500">
                   <TrendingUp className={`w-3 h-3 ${isUpdating ? 'animate-spin' : ''}`} />
@@ -489,6 +497,14 @@ export function LeaderboardSidebar() {
                   </span>
                 </div>
               </div>
+
+              {/* View Full Leaderboard Link */}
+              <Link
+                href="/leaderboard"
+                className="block text-center text-xs font-semibold text-burnt-orange hover:text-burnt-orange-dark transition-colors hover:underline"
+              >
+                View Full Leaderboard →
+              </Link>
             </div>
           </div>
         </div>

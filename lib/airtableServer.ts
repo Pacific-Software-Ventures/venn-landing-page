@@ -139,21 +139,28 @@ export async function updateUserPoints(
 }
 
 /**
- * Get top 10 users by points for leaderboard
+ * Get users by points for leaderboard
+ * @param limit - Maximum number of records to return (default: all records)
  */
-export async function getLeaderboard(): Promise<Array<{
+export async function getLeaderboard(limit?: number): Promise<Array<{
   rank: number;
   name: string;
   points: number;
   referralCount: number;
 }>> {
   try {
+    const selectOptions: any = {
+      sort: [{ field: 'Points', direction: 'desc' }],
+      fields: ['Name', 'Points', 'ReferralCount'],
+    };
+
+    // Only add maxRecords if limit is specified
+    if (limit) {
+      selectOptions.maxRecords = limit;
+    }
+
     const records = await table
-      .select({
-        sort: [{ field: 'Points', direction: 'desc' }],
-        maxRecords: 10,
-        fields: ['Name', 'Points', 'ReferralCount'],
-      })
+      .select(selectOptions)
       .all();
 
     return records.map((record, index) => {

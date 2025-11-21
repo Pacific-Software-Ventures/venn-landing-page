@@ -185,6 +185,24 @@ export function Rewards() {
                 <span className="font-semibold text-burnt-orange"> No purchase necessary</span>—it's completely free to join and compete.
               </p>
             </div>
+
+            {/* View Full Leaderboard Link */}
+            <div className="text-center pt-6">
+              <a
+                href="/leaderboard"
+                className="inline-flex items-center gap-2 text-burnt-orange hover:text-burnt-orange-dark font-semibold transition-colors group"
+              >
+                <span>View Full Leaderboard</span>
+                <svg
+                  className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </Container>
