@@ -181,7 +181,9 @@ export default function PrivacyPolicy() {
               We use SMS messaging to:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+              <li><strong>Verification Codes:</strong> Send one-time codes to verify your phone number during sign-up and login</li>
               <li><strong>Plan Invitations:</strong> Send invitations from your friends who use the Venn app</li>
+              <li><strong>Plan Notifications:</strong> Send reminders and updates about plans you've joined</li>
               <li><strong>RSVP Responses:</strong> Process your YES/NO responses to plan invitations</li>
               <li><strong>Confirmations:</strong> Send confirmations when you accept or decline plans</li>
               <li><strong>Support:</strong> Respond to help requests and provide customer support</li>
