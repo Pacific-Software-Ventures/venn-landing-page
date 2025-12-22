@@ -212,7 +212,9 @@ export default function TermsOfService() {
               You may receive the following types of SMS messages:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+              <li><strong>Verification Codes:</strong> One-time codes to verify your phone number during sign-up and login</li>
               <li><strong>Plan Invitations:</strong> Invitations from friends using the Venn app</li>
+              <li><strong>Plan Notifications:</strong> Reminders and updates about plans you've joined</li>
               <li><strong>Confirmations:</strong> Responses and confirmations for plan RSVPs</li>
               <li><strong>Support:</strong> Customer support responses when you text HELP</li>
             </ul>
