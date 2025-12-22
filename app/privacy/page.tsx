@@ -34,13 +34,14 @@ export default function PrivacyPolicy() {
             <li><a href="#information-we-collect" className="text-orange-600 hover:text-orange-700 hover:underline">2. Information We Collect</a></li>
             <li><a href="#how-we-use" className="text-orange-600 hover:text-orange-700 hover:underline">3. How We Use Your Information</a></li>
             <li><a href="#third-party" className="text-orange-600 hover:text-orange-700 hover:underline">4. Third-Party Services</a></li>
-            <li><a href="#data-retention" className="text-orange-600 hover:text-orange-700 hover:underline">5. Data Retention and Deletion</a></li>
-            <li><a href="#international" className="text-orange-600 hover:text-orange-700 hover:underline">6. International Data Transfers</a></li>
-            <li><a href="#your-rights" className="text-orange-600 hover:text-orange-700 hover:underline">7. Your Privacy Rights</a></li>
-            <li><a href="#childrens-privacy" className="text-orange-600 hover:text-orange-700 hover:underline">8. Children's Privacy</a></li>
-            <li><a href="#security" className="text-orange-600 hover:text-orange-700 hover:underline">9. Security</a></li>
-            <li><a href="#changes" className="text-orange-600 hover:text-orange-700 hover:underline">10. Changes to This Policy</a></li>
-            <li><a href="#contact" className="text-orange-600 hover:text-orange-700 hover:underline">11. Contact Us</a></li>
+            <li><a href="#sms-terms" className="text-orange-600 hover:text-orange-700 hover:underline">5. SMS/Text Messaging Terms</a></li>
+            <li><a href="#data-retention" className="text-orange-600 hover:text-orange-700 hover:underline">6. Data Retention and Deletion</a></li>
+            <li><a href="#international" className="text-orange-600 hover:text-orange-700 hover:underline">7. International Data Transfers</a></li>
+            <li><a href="#your-rights" className="text-orange-600 hover:text-orange-700 hover:underline">8. Your Privacy Rights</a></li>
+            <li><a href="#childrens-privacy" className="text-orange-600 hover:text-orange-700 hover:underline">9. Children's Privacy</a></li>
+            <li><a href="#security" className="text-orange-600 hover:text-orange-700 hover:underline">10. Security</a></li>
+            <li><a href="#changes" className="text-orange-600 hover:text-orange-700 hover:underline">11. Changes to This Policy</a></li>
+            <li><a href="#contact" className="text-orange-600 hover:text-orange-700 hover:underline">12. Contact Us</a></li>
           </ol>
         </nav>
 
@@ -150,16 +151,84 @@ export default function PrivacyPolicy() {
               We use Google Fonts to display typography on our website. When you visit our site, Google may collect technical information such as IP addresses. Google's privacy policy is available at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">policies.google.com/privacy</a>.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">4.4 Data Sharing</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">4.4 Twilio (SMS Service Provider)</h3>
+            <p className="text-gray-700 mb-4">
+              We use Twilio to send SMS messages for plan invitations and notifications. When you receive or send SMS messages through our Service, Twilio processes your phone number and message content. Twilio's privacy policy is available at <a href="https://www.twilio.com/legal/privacy" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">twilio.com/legal/privacy</a>.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">4.5 Data Sharing</h3>
             <p className="text-gray-700 mb-4">
               We do not sell, rent, or share your personal information with third parties for their marketing purposes. We only share data with service providers as necessary to operate our Service, and we require them to protect your information.
             </p>
           </section>
 
-          <section id="data-retention" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Data Retention and Deletion</h2>
+          <section id="sms-terms" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">5. SMS/Text Messaging Terms</h2>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">5.1 How Long We Keep Your Data</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">5.1 Information We Collect</h3>
+            <p className="text-gray-700 mb-4">
+              When you use our SMS features, we collect:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+              <li><strong>Phone Number:</strong> Your mobile phone number in E.164 format</li>
+              <li><strong>Message Content:</strong> The content of SMS messages you send and receive through our Service</li>
+              <li><strong>Opt-in/Opt-out Status:</strong> Your preferences for receiving SMS messages</li>
+              <li><strong>Message Metadata:</strong> Timestamps, delivery status, and message identifiers</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">5.2 How We Use SMS</h3>
+            <p className="text-gray-700 mb-4">
+              We use SMS messaging to:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+              <li><strong>Plan Invitations:</strong> Send invitations from your friends who use the Venn app</li>
+              <li><strong>RSVP Responses:</strong> Process your YES/NO responses to plan invitations</li>
+              <li><strong>Confirmations:</strong> Send confirmations when you accept or decline plans</li>
+              <li><strong>Support:</strong> Respond to help requests and provide customer support</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">5.3 Message Frequency</h3>
+            <p className="text-gray-700 mb-4">
+              Message frequency varies based on your activity and interactions with friends on Venn. Typical users receive 1-10 messages per month depending on plan invitations received. You will never receive marketing messages via SMS.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">5.4 How to Opt Out</h3>
+            <p className="text-gray-700 mb-4">
+              You can opt out of SMS messages at any time by:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+              <li><strong>Reply STOP:</strong> Reply STOP, STOPALL, UNSUBSCRIBE, CANCEL, END, or QUIT to any message from Venn</li>
+              <li><strong>Email Us:</strong> Contact support@vennapp.co to request opt-out</li>
+            </ul>
+            <p className="text-gray-700 mb-4">
+              After opting out, you will receive one final confirmation message. You will not receive any further SMS messages from Venn unless you opt back in.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">5.5 How to Re-Subscribe</h3>
+            <p className="text-gray-700 mb-4">
+              To re-subscribe to SMS messages after opting out, reply START, UNSTOP, or SUBSCRIBE to any previous Venn message, or contact support@vennapp.co.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">5.6 Help</h3>
+            <p className="text-gray-700 mb-4">
+              For help with SMS messaging, reply HELP or INFO to any Venn message, or contact support@vennapp.co.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">5.7 Carrier Rates</h3>
+            <p className="text-gray-700 mb-4">
+              Message and data rates may apply. Check with your mobile carrier for details about your text messaging plan. Venn does not charge for SMS messages, but your carrier may.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">5.8 SMS Data Retention</h3>
+            <p className="text-gray-700 mb-4">
+              SMS opt-out preferences are retained indefinitely to ensure we respect your communication preferences. Message content is retained for 90 days for support and debugging purposes, after which it is permanently deleted.
+            </p>
+          </section>
+
+          <section id="data-retention" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Data Retention and Deletion</h2>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">6.1 How Long We Keep Your Data</h3>
             <p className="text-gray-700 mb-4">
               We retain your personal information for as long as necessary to provide our Service and fulfill the purposes outlined in this Privacy Policy. Specifically:
             </p>
@@ -170,7 +239,7 @@ export default function PrivacyPolicy() {
               <li><strong>Communication Records:</strong> Retained for customer support purposes for up to 2 years</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">5.2 How to Delete Your Data</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">6.2 How to Delete Your Data</h3>
             <p className="text-gray-700 mb-4">
               You have the right to request deletion of your personal information. To do so:
             </p>
@@ -185,7 +254,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section id="international" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. International Data Transfers</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. International Data Transfers</h2>
             <p className="text-gray-700 mb-4">
               Venn is based in the United States (San Francisco, California). If you are accessing our Service from outside the United States, please be aware that your information will be transferred to, stored, and processed in the United States.
             </p>
@@ -198,9 +267,9 @@ export default function PrivacyPolicy() {
           </section>
 
           <section id="your-rights" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Your Privacy Rights</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Your Privacy Rights</h2>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">7.1 General Rights (All Users)</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">8.1 General Rights (All Users)</h3>
             <p className="text-gray-700 mb-4">
               Regardless of where you live, you have the following rights:
             </p>
@@ -211,7 +280,7 @@ export default function PrivacyPolicy() {
               <li><strong>Opt-Out:</strong> Unsubscribe from marketing communications</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">7.2 GDPR Rights (EEA/UK/Swiss Users)</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">8.2 GDPR Rights (EEA/UK/Swiss Users)</h3>
             <p className="text-gray-700 mb-4">
               If you are in the European Economic Area, United Kingdom, or Switzerland, you have additional rights under the General Data Protection Regulation (GDPR):
             </p>
@@ -226,7 +295,7 @@ export default function PrivacyPolicy() {
               Our lawful basis for processing your data is primarily consent (for waitlist signup) and legitimate interests (for fraud prevention and service improvement).
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">7.3 CCPA Rights (California Users)</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">8.3 CCPA Rights (California Users)</h3>
             <p className="text-gray-700 mb-4">
               If you are a California resident, the California Consumer Privacy Act (CCPA) provides you with additional rights:
             </p>
@@ -238,7 +307,7 @@ export default function PrivacyPolicy() {
               <li><strong>Non-Discrimination:</strong> Exercise your rights without discrimination</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">7.4 How to Exercise Your Rights</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">8.4 How to Exercise Your Rights</h3>
             <p className="text-gray-700 mb-4">
               To exercise any of these rights, contact us at:
             </p>
@@ -253,7 +322,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section id="childrens-privacy" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Children's Privacy</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Children's Privacy</h2>
             <p className="text-gray-700 mb-4">
               Our Service is intended for users aged 13 and older. We require users to be at least 13 years old to join our waitlist and use our Service.
             </p>
@@ -266,7 +335,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section id="security" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Security</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Security</h2>
             <p className="text-gray-700 mb-4">
               We take the security of your personal information seriously and implement appropriate technical and organizational measures to protect it:
             </p>
@@ -286,7 +355,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section id="changes" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Changes to This Policy</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Changes to This Policy</h2>
             <p className="text-gray-700 mb-4">
               We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors.
             </p>
@@ -304,7 +373,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section id="contact" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Contact Us</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Contact Us</h2>
             <p className="text-gray-700 mb-4">
               If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
             </p>

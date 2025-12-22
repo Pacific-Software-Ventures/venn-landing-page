@@ -35,17 +35,18 @@ export default function TermsOfService() {
             <li><a href="#eligibility" className="text-orange-600 hover:text-orange-700 hover:underline">3. Eligibility</a></li>
             <li><a href="#accounts" className="text-orange-600 hover:text-orange-700 hover:underline">4. User Accounts and Registration</a></li>
             <li><a href="#referral-program" className="text-orange-600 hover:text-orange-700 hover:underline">5. Referral Rewards Program</a></li>
-            <li><a href="#acceptable-use" className="text-orange-600 hover:text-orange-700 hover:underline">6. Acceptable Use Policy</a></li>
-            <li><a href="#intellectual-property" className="text-orange-600 hover:text-orange-700 hover:underline">7. Intellectual Property Rights</a></li>
-            <li><a href="#user-content" className="text-orange-600 hover:text-orange-700 hover:underline">8. User-Generated Content</a></li>
-            <li><a href="#disclaimers" className="text-orange-600 hover:text-orange-700 hover:underline">9. Disclaimers and Limitations of Liability</a></li>
-            <li><a href="#indemnification" className="text-orange-600 hover:text-orange-700 hover:underline">10. Indemnification</a></li>
-            <li><a href="#termination" className="text-orange-600 hover:text-orange-700 hover:underline">11. Termination</a></li>
-            <li><a href="#dispute-resolution" className="text-orange-600 hover:text-orange-700 hover:underline">12. Dispute Resolution</a></li>
-            <li><a href="#governing-law" className="text-orange-600 hover:text-orange-700 hover:underline">13. Governing Law</a></li>
-            <li><a href="#modifications" className="text-orange-600 hover:text-orange-700 hover:underline">14. Modifications to Terms</a></li>
-            <li><a href="#miscellaneous" className="text-orange-600 hover:text-orange-700 hover:underline">15. Miscellaneous</a></li>
-            <li><a href="#contact" className="text-orange-600 hover:text-orange-700 hover:underline">16. Contact Information</a></li>
+            <li><a href="#sms-terms" className="text-orange-600 hover:text-orange-700 hover:underline">6. SMS/Text Messaging Terms</a></li>
+            <li><a href="#acceptable-use" className="text-orange-600 hover:text-orange-700 hover:underline">7. Acceptable Use Policy</a></li>
+            <li><a href="#intellectual-property" className="text-orange-600 hover:text-orange-700 hover:underline">8. Intellectual Property Rights</a></li>
+            <li><a href="#user-content" className="text-orange-600 hover:text-orange-700 hover:underline">9. User-Generated Content</a></li>
+            <li><a href="#disclaimers" className="text-orange-600 hover:text-orange-700 hover:underline">10. Disclaimers and Limitations of Liability</a></li>
+            <li><a href="#indemnification" className="text-orange-600 hover:text-orange-700 hover:underline">11. Indemnification</a></li>
+            <li><a href="#termination" className="text-orange-600 hover:text-orange-700 hover:underline">12. Termination</a></li>
+            <li><a href="#dispute-resolution" className="text-orange-600 hover:text-orange-700 hover:underline">13. Dispute Resolution</a></li>
+            <li><a href="#governing-law" className="text-orange-600 hover:text-orange-700 hover:underline">14. Governing Law</a></li>
+            <li><a href="#modifications" className="text-orange-600 hover:text-orange-700 hover:underline">15. Modifications to Terms</a></li>
+            <li><a href="#miscellaneous" className="text-orange-600 hover:text-orange-700 hover:underline">16. Miscellaneous</a></li>
+            <li><a href="#contact" className="text-orange-600 hover:text-orange-700 hover:underline">17. Contact Information</a></li>
           </ol>
         </nav>
 
@@ -192,13 +193,87 @@ export default function TermsOfService() {
             </p>
           </section>
 
+          <section id="sms-terms" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. SMS/Text Messaging Terms and Conditions</h2>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">6.1 Consent to Receive Messages</h3>
+            <p className="text-gray-700 mb-4">
+              By providing your mobile phone number to Venn or by replying YES to an SMS invitation, you expressly consent to receive recurring automated text messages from Venn at the mobile number provided. You understand that:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+              <li>Consent is not a condition of purchase or use of the Venn service</li>
+              <li>Message frequency varies based on your interactions with friends</li>
+              <li>Message and data rates may apply</li>
+              <li>You can opt out at any time by replying STOP</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">6.2 Types of Messages</h3>
+            <p className="text-gray-700 mb-4">
+              You may receive the following types of SMS messages:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+              <li><strong>Plan Invitations:</strong> Invitations from friends using the Venn app</li>
+              <li><strong>Confirmations:</strong> Responses and confirmations for plan RSVPs</li>
+              <li><strong>Support:</strong> Customer support responses when you text HELP</li>
+            </ul>
+            <p className="text-gray-700 mb-4">
+              We do not send marketing or promotional messages via SMS.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">6.3 Opt-In Keywords</h3>
+            <p className="text-gray-700 mb-4">
+              The following keywords indicate consent to receive messages:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+              <li><strong>To accept invitations:</strong> YES, Y, YEP, YEAH, YA, SURE, OK, OKAY</li>
+              <li><strong>To re-subscribe:</strong> START, UNSTOP, SUBSCRIBE</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">6.4 Opt-Out Instructions</h3>
+            <p className="text-gray-700 mb-4">
+              To stop receiving SMS messages from Venn, reply with any of the following keywords:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+              <li>STOP</li>
+              <li>STOPALL</li>
+              <li>UNSUBSCRIBE</li>
+              <li>CANCEL</li>
+              <li>END</li>
+              <li>QUIT</li>
+            </ul>
+            <p className="text-gray-700 mb-4">
+              You will receive a single confirmation message after opting out. No further messages will be sent unless you opt back in by replying START.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">6.5 Help</h3>
+            <p className="text-gray-700 mb-4">
+              For assistance with Venn SMS messaging, reply HELP or INFO to any message, or contact support@vennapp.co.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">6.6 Carrier Information</h3>
+            <p className="text-gray-700 mb-4">
+              Carriers are not liable for delayed or undelivered messages. The following carriers are supported: AT&T, Verizon, T-Mobile, Sprint, and all major U.S. carriers. Message and data rates may apply. Check with your mobile carrier for details about your text messaging plan.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">6.7 Disclaimer</h3>
+            <p className="text-gray-700 mb-4">
+              Venn is not responsible for messages that are delayed, lost, or not delivered due to:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+              <li>Carrier network issues</li>
+              <li>Device incompatibility</li>
+              <li>Incorrect phone number provided</li>
+              <li>Phone settings blocking messages</li>
+            </ul>
+          </section>
+
           <section id="acceptable-use" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Acceptable Use Policy</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Acceptable Use Policy</h2>
             <p className="text-gray-700 mb-4">
               You agree to use the Service only for lawful purposes and in accordance with these Terms. You agree NOT to:
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">6.1 Prohibited Activities</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">7.1 Prohibited Activities</h3>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
               <li>Violate any applicable laws, regulations, or third-party rights</li>
               <li>Impersonate any person or entity or falsely state your affiliation</li>
@@ -211,7 +286,7 @@ export default function TermsOfService() {
               <li>Engage in any activity that interferes with or disrupts the Service</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">6.2 Content Restrictions</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">7.2 Content Restrictions</h3>
             <p className="text-gray-700 mb-4">
               You may not post, upload, or transmit content that:
             </p>
@@ -226,9 +301,9 @@ export default function TermsOfService() {
           </section>
 
           <section id="intellectual-property" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Intellectual Property Rights</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Intellectual Property Rights</h2>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">7.1 Venn's Intellectual Property</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">8.1 Venn's Intellectual Property</h3>
             <p className="text-gray-700 mb-4">
               The Service and all content, features, and functionality (including but not limited to software, text, displays, images, video, audio, and design) are owned by Venn Corporation and are protected by:
             </p>
@@ -239,7 +314,7 @@ export default function TermsOfService() {
               <li>Other intellectual property rights</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">7.2 Limited License</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">8.2 Limited License</h3>
             <p className="text-gray-700 mb-4">
               We grant you a limited, non-exclusive, non-transferable, revocable license to:
             </p>
@@ -256,12 +331,12 @@ export default function TermsOfService() {
               <li>Use the Service for commercial purposes</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">7.3 Trademarks</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">8.3 Trademarks</h3>
             <p className="text-gray-700 mb-4">
               "Venn," the Venn logo, and other marks are trademarks of Venn Corporation. You may not use these trademarks without our prior written permission.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">7.4 Copyright Infringement</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">8.4 Copyright Infringement</h3>
             <p className="text-gray-700 mb-4">
               If you believe content on our Service infringes your copyright, please contact us at support@vennapp.co with:
             </p>
@@ -276,9 +351,9 @@ export default function TermsOfService() {
           </section>
 
           <section id="user-content" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. User-Generated Content</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. User-Generated Content</h2>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">8.1 Your Content</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">9.1 Your Content</h3>
             <p className="text-gray-700 mb-4">
               You retain ownership of any content you submit, post, or display on the Service ("User Content"). However, by submitting User Content, you grant Venn a worldwide, non-exclusive, royalty-free, sublicensable, and transferable license to:
             </p>
@@ -288,7 +363,7 @@ export default function TermsOfService() {
               <li>Distribute and publicly display your User Content in connection with the Service</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">8.2 Responsibility for Content</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">9.2 Responsibility for Content</h3>
             <p className="text-gray-700 mb-4">
               You are solely responsible for your User Content and the consequences of posting it. You represent and warrant that:
             </p>
@@ -298,7 +373,7 @@ export default function TermsOfService() {
               <li>Your User Content does not infringe third-party rights</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">8.3 Content Moderation</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">9.3 Content Moderation</h3>
             <p className="text-gray-700 mb-4">
               We reserve the right, but are not obligated, to:
             </p>
@@ -310,9 +385,9 @@ export default function TermsOfService() {
           </section>
 
           <section id="disclaimers" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Disclaimers and Limitations of Liability</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Disclaimers and Limitations of Liability</h2>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">9.1 Service Disclaimer</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">10.1 Service Disclaimer</h3>
             <p className="text-gray-700 mb-4 uppercase font-semibold">
               THE SERVICE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.
             </p>
@@ -326,7 +401,7 @@ export default function TermsOfService() {
               <li>Security or freedom from viruses</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">9.2 Limitation of Liability</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">10.2 Limitation of Liability</h3>
             <p className="text-gray-700 mb-4 uppercase font-semibold">
               TO THE MAXIMUM EXTENT PERMITTED BY LAW, VENN SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES.
             </p>
@@ -338,7 +413,7 @@ export default function TermsOfService() {
               <li>The value of any prizes you were entitled to receive (if applicable)</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">9.3 Third-Party Services</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">10.3 Third-Party Services</h3>
             <p className="text-gray-700 mb-4">
               The Service may contain links to third-party websites or services. We are not responsible for:
             </p>
@@ -350,7 +425,7 @@ export default function TermsOfService() {
           </section>
 
           <section id="indemnification" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Indemnification</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Indemnification</h2>
             <p className="text-gray-700 mb-4">
               You agree to indemnify, defend, and hold harmless Venn Corporation, its officers, directors, employees, contractors, agents, and affiliates from and against any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising from:
             </p>
@@ -367,14 +442,14 @@ export default function TermsOfService() {
           </section>
 
           <section id="termination" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Termination</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Termination</h2>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">11.1 Termination by You</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">12.1 Termination by You</h3>
             <p className="text-gray-700 mb-4">
               You may terminate your account at any time by contacting us at support@vennapp.co. Upon termination, you will lose access to your account, referral code, points, and leaderboard position.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">11.2 Termination by Venn</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">12.2 Termination by Venn</h3>
             <p className="text-gray-700 mb-4">
               We may suspend or terminate your account immediately, without prior notice or liability, for any reason, including:
             </p>
@@ -386,7 +461,7 @@ export default function TermsOfService() {
               <li>At our sole discretion</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">11.3 Effects of Termination</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">12.3 Effects of Termination</h3>
             <p className="text-gray-700 mb-4">
               Upon termination:
             </p>
@@ -399,14 +474,14 @@ export default function TermsOfService() {
           </section>
 
           <section id="dispute-resolution" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Dispute Resolution</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">13. Dispute Resolution</h2>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">12.1 Informal Resolution</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">13.1 Informal Resolution</h3>
             <p className="text-gray-700 mb-4">
               Before filing a legal claim, you agree to first contact us at support@vennapp.co to attempt to resolve the dispute informally. We will work in good faith to resolve the issue within 30 days.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">12.2 Binding Arbitration</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">13.2 Binding Arbitration</h3>
             <p className="text-gray-700 mb-4">
               If informal resolution fails, you agree that any dispute arising from or relating to these Terms or the Service shall be resolved through binding arbitration, except:
             </p>
@@ -418,19 +493,19 @@ export default function TermsOfService() {
               Arbitration will be conducted by the American Arbitration Association (AAA) under its Commercial Arbitration Rules. The arbitration will be held in San Francisco, California, or another mutually agreed location.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">12.3 Class Action Waiver</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">13.3 Class Action Waiver</h3>
             <p className="text-gray-700 mb-4 uppercase font-semibold">
               YOU AGREE THAT DISPUTES WILL BE RESOLVED ON AN INDIVIDUAL BASIS. YOU WAIVE ANY RIGHT TO PARTICIPATE IN A CLASS ACTION, CLASS ARBITRATION, OR REPRESENTATIVE ACTION.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">12.4 Opt-Out</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">13.4 Opt-Out</h3>
             <p className="text-gray-700 mb-4">
               You may opt out of the arbitration agreement within 30 days of accepting these Terms by emailing support@vennapp.co with "Arbitration Opt-Out" in the subject line.
             </p>
           </section>
 
           <section id="governing-law" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">13. Governing Law</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">14. Governing Law</h2>
             <p className="text-gray-700 mb-4">
               These Terms and your use of the Service are governed by the laws of the State of California, United States, without regard to its conflict of law provisions.
             </p>
@@ -440,7 +515,7 @@ export default function TermsOfService() {
           </section>
 
           <section id="modifications" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">14. Modifications to Terms</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">15. Modifications to Terms</h2>
             <p className="text-gray-700 mb-4">
               We reserve the right to modify these Terms at any time. When we make material changes, we will:
             </p>
@@ -458,41 +533,41 @@ export default function TermsOfService() {
           </section>
 
           <section id="miscellaneous" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">15. Miscellaneous</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">16. Miscellaneous</h2>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">15.1 Entire Agreement</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">16.1 Entire Agreement</h3>
             <p className="text-gray-700 mb-4">
               These Terms, together with our Privacy Policy and any additional terms you agree to, constitute the entire agreement between you and Venn regarding the Service.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">15.2 Severability</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">16.2 Severability</h3>
             <p className="text-gray-700 mb-4">
               If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force and effect.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">15.3 Waiver</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">16.3 Waiver</h3>
             <p className="text-gray-700 mb-4">
               Our failure to enforce any right or provision of these Terms does not constitute a waiver of that right or provision.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">15.4 Assignment</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">16.4 Assignment</h3>
             <p className="text-gray-700 mb-4">
               You may not assign or transfer these Terms or your account without our prior written consent. We may assign our rights and obligations without restriction.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">15.5 Force Majeure</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">16.5 Force Majeure</h3>
             <p className="text-gray-700 mb-4">
               We shall not be liable for any failure or delay in performance due to circumstances beyond our reasonable control, including acts of God, war, terrorism, pandemics, or government actions.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">15.6 Survival</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">16.6 Survival</h3>
             <p className="text-gray-700 mb-4">
               Sections that by their nature should survive termination will survive, including: Intellectual Property Rights, Disclaimers, Limitations of Liability, Indemnification, Dispute Resolution, and Governing Law.
             </p>
           </section>
 
           <section id="contact" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">16. Contact Information</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">17. Contact Information</h2>
             <p className="text-gray-700 mb-4">
               If you have questions or concerns about these Terms, please contact us:
             </p>
