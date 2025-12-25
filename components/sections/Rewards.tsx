@@ -2,7 +2,7 @@
 
 import { Container } from '../ui/Container';
 import { REWARD_TIERS } from '@/lib/rewards';
-import { Trophy, Ticket, Gift, Zap, Check } from 'lucide-react';
+import { Trophy, Ticket, Zap, Check } from 'lucide-react';
 
 export function Rewards() {
   return (
@@ -71,7 +71,7 @@ export function Rewards() {
             </p>
 
           {/* Prize Tiers */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-6 mb-20 max-w-5xl mx-auto px-4">
             {/* Champion - Rank #1 */}
             <div className="relative bg-white rounded-3xl p-6 sm:p-8 shadow-[0_20px_60px_-15px_rgba(249,115,22,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(249,115,22,0.4)] transform hover:scale-[1.02] transition-all duration-300 border-4 border-orange-600">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase">
@@ -114,40 +114,19 @@ export function Rewards() {
               </ul>
             </div>
 
-            {/* Rank 11-25 */}
-            <div className="relative bg-white rounded-3xl p-6 sm:p-8 shadow-[0_20px_60px_-15px_rgba(234,88,12,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(234,88,12,0.4)] transform hover:scale-[1.02] transition-all duration-300 border-4 border-orange-500">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase">
-                15 Spots
-              </div>
-              <div className="text-center mb-6 mt-3">
-                <Gift className="w-12 h-12 sm:w-14 sm:h-14 text-orange-500 mx-auto mb-3" />
-                <h3 className="text-xl sm:text-2xl font-bold text-orange-500 mb-2 tracking-tight">Rank 11-25</h3>
-                <div className="text-2xl sm:text-3xl font-black text-orange-500 tracking-tight">$300+</div>
-              </div>
-              <div className="h-px bg-orange-200 mb-4"></div>
-              <ul className="space-y-2 text-left">
-                {REWARD_TIERS[2].rewards.map((reward, i) => (
-                  <li key={i} className="text-orange-600 text-[12px] sm:text-[13px] leading-relaxed font-medium flex items-start gap-2">
-                    <Check className="w-3 h-3 text-orange-500 flex-shrink-0 mt-0.5" />
-                    <span>{reward}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Rank 26-100 */}
+            {/* Rank 11-100 */}
             <div className="relative bg-white rounded-3xl p-6 sm:p-8 shadow-[0_20px_60px_-15px_rgba(234,88,12,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(234,88,12,0.4)] transform hover:scale-[1.02] transition-all duration-300 border-4 border-orange-700">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap uppercase">
-                75 Spots
+                90 Spots
               </div>
               <div className="text-center mb-6 mt-3">
                 <Zap className="w-12 h-12 sm:w-14 sm:h-14 text-orange-700 mx-auto mb-3" />
-                <h3 className="text-xl sm:text-2xl font-bold text-orange-700 mb-2 tracking-tight">Rank 26-100</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-orange-700 mb-2 tracking-tight">Rank 11-100</h3>
                 <div className="text-2xl sm:text-3xl font-black text-orange-700 tracking-tight">$100+</div>
               </div>
               <div className="h-px bg-orange-200 mb-4"></div>
               <ul className="space-y-2 text-left">
-                {REWARD_TIERS[3].rewards.map((reward, i) => (
+                {REWARD_TIERS[2].rewards.map((reward, i) => (
                   <li key={i} className="text-orange-800 text-[12px] sm:text-[13px] leading-relaxed font-medium flex items-start gap-2">
                     <Check className="w-3 h-3 text-orange-700 flex-shrink-0 mt-0.5" />
                     <span>{reward}</span>

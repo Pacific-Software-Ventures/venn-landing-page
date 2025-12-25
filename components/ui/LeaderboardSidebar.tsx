@@ -91,8 +91,7 @@ export function LeaderboardSidebar() {
   const getPrizeLabel = (rank: number) => {
     if (rank === 1) return 'Champion';
     if (rank >= 2 && rank <= 10) return 'Rank 2-10';
-    if (rank >= 11 && rank <= 25) return 'Rank 11-25';
-    if (rank >= 26 && rank <= 100) return 'Rank 26-100';
+    if (rank >= 11 && rank <= 100) return 'Rank 11-100';
     return null;
   };
 
@@ -199,8 +198,7 @@ export function LeaderboardSidebar() {
                               <div className="flex items-center gap-1">
                                 {entry.rank === 1 && <Trophy className="w-2.5 h-2.5 text-burnt-orange" />}
                                 {entry.rank >= 2 && entry.rank <= 10 && <Ticket className="w-2.5 h-2.5 text-burnt-orange" />}
-                                {entry.rank >= 11 && entry.rank <= 25 && <Gift className="w-2.5 h-2.5 text-burnt-orange" />}
-                                {entry.rank >= 26 && entry.rank <= 100 && <Sparkles className="w-2.5 h-2.5 text-burnt-orange" />}
+                                {entry.rank >= 11 && entry.rank <= 100 && <Sparkles className="w-2.5 h-2.5 text-burnt-orange" />}
                                 <p className="text-[10px] font-semibold text-burnt-orange">
                                   {getPrizeLabel(entry.rank)}
                                 </p>
@@ -291,19 +289,19 @@ export function LeaderboardSidebar() {
                   <div className="flex items-center gap-1.5">
                     <Ticket className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] font-bold text-slate-900">#2-10 - FLAGSHIP</p>
-                      <p className="text-[9px] text-slate-700">Free ticket + $100 flight</p>
+                      <p className="text-[10px] font-bold text-slate-900">#2-10 - EARLY ACCESS</p>
+                      <p className="text-[9px] text-slate-700">48hrs early + badge</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Top 25 */}
+                {/* Top 100 */}
                 <div className="bg-stone-50 rounded-lg p-1.5 border border-stone-200">
                   <div className="flex items-center gap-1.5">
-                    <Gift className="w-3.5 h-3.5 text-burnt-orange flex-shrink-0" />
+                    <Sparkles className="w-3.5 h-3.5 text-burnt-orange flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] font-bold text-charcoal">#11-25 - DINNER</p>
-                      <p className="text-[9px] text-stone-600">Prime Rib up to $150</p>
+                      <p className="text-[10px] font-bold text-charcoal">#11-100 - PERKS</p>
+                      <p className="text-[9px] text-stone-600">Trial + collectible</p>
                     </div>
                   </div>
                 </div>
@@ -450,8 +448,7 @@ export function LeaderboardSidebar() {
                           <div className="flex items-center gap-1">
                             {entry.rank === 1 && <Trophy className="w-3 h-3 text-burnt-orange" />}
                             {entry.rank >= 2 && entry.rank <= 10 && <Ticket className="w-3 h-3 text-burnt-orange" />}
-                            {entry.rank >= 11 && entry.rank <= 25 && <Gift className="w-3 h-3 text-burnt-orange" />}
-                            {entry.rank >= 26 && entry.rank <= 100 && <Sparkles className="w-3 h-3 text-burnt-orange" />}
+                            {entry.rank >= 11 && entry.rank <= 100 && <Sparkles className="w-3 h-3 text-burnt-orange" />}
                             <p className="text-xs font-semibold text-burnt-orange">
                               {getPrizeLabel(entry.rank)}
                             </p>

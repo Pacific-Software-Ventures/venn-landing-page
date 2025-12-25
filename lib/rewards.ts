@@ -44,38 +44,19 @@ export const REWARD_TIERS: RewardTier[] = [
     badge: 'RANK 2-10',
     value: '$500+',
     rewards: [
-      '1 Free Ticket to Next Flagship Venn Event',
-      '$100 Delta Airlines Credit',
       'Early Access 48 hrs before public',
       '"Early Architect" Badge'
     ],
-    description: 'Elite perks! Free flagship event ticket + flight credit!'
-  },
-  {
-    id: 'top25',
-    name: 'RANK 11-25',
-    rankRange: [11, 25],
-    icon: 'gift',
-    color: '#EA580C',
-    gradient: 'from-orange-500 via-burnt-orange to-orange-600',
-    badge: 'RANK 11-25',
-    value: '$300+',
-    rewards: [
-      'Free House of Prime Rib Dinner up to $150 (dine with a friend)',
-      '30% off any Venn ticket for your first 3 events',
-      'Early Access 24 hrs before public',
-      '"First Cohort" Badge'
-    ],
-    description: 'Unlock insider perks! Fine dining + exclusive discounts!'
+    description: 'Elite perks! Early access + exclusive badge!'
   },
   {
     id: 'top100',
-    name: 'RANK 26-100',
-    rankRange: [26, 100],
+    name: 'RANK 11-100',
+    rankRange: [11, 100],
     icon: 'zap',
     color: '#F59E0B',
     gradient: 'from-amber-400 via-yellow-500 to-amber-500',
-    badge: 'RANK 26-100',
+    badge: 'RANK 11-100',
     value: '$100+',
     rewards: [
       'Free 7-Day Venn+ Trial Access Code',
