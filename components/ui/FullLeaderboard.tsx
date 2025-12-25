@@ -78,7 +78,6 @@ export function FullLeaderboard() {
     if (rank === 2) return 'from-gray-300 via-gray-400 to-gray-500';
     if (rank === 3) return 'from-amber-500 via-amber-600 to-amber-700';
     if (rank <= 10) return 'from-orange-400 via-burnt-orange to-orange-600';
-    if (rank <= 25) return 'from-orange-300 via-orange-400 to-orange-500';
     if (rank <= 100) return 'from-amber-300 via-amber-400 to-amber-500';
     return 'from-stone-200 via-stone-300 to-stone-400';
   };
