@@ -44,10 +44,11 @@ export const REWARD_TIERS: RewardTier[] = [
     badge: 'RANK 2-10',
     value: '$500+',
     rewards: [
+      '2 Free Tickets to Venn Events in January',
       'Early Access 48 hrs before public',
       '"Early Architect" Badge'
     ],
-    description: 'Elite perks! Early access + exclusive badge!'
+    description: 'Elite perks! Free event tickets + early access!'
   },
   {
     id: 'top100',

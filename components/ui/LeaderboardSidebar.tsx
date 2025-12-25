@@ -289,8 +289,8 @@ export function LeaderboardSidebar() {
                   <div className="flex items-center gap-1.5">
                     <Ticket className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] font-bold text-slate-900">#2-10 - EARLY ACCESS</p>
-                      <p className="text-[9px] text-slate-700">48hrs early + badge</p>
+                      <p className="text-[10px] font-bold text-slate-900">#2-10 - FREE TICKETS</p>
+                      <p className="text-[9px] text-slate-700">2 free January events</p>
                     </div>
                   </div>
                 </div>
